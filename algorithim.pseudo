@@ -1,0 +1,91 @@
+//Note: 3 by 3 does not address bottom row issues
+
+
+//Global variable storing the board
+board = [
+   [ , , ],
+   [ , , ],
+   [ , , ]
+]
+
+//What board should be
+solved = [
+   [ , , ],
+   [ , , ],
+   [ , , ]
+]
+
+//direction, true = up, right, false = left, down
+function move_row(row_index, direction) {
+   //update board
+}
+
+function move_column(column_index, direction) {
+   //update board
+}
+
+function find(desired_number) {
+   //return coordinates of number
+}
+
+//THIS IS THE MAIN ALGORITHIM WE NEED TO WORK ON
+//Moving sth to a row means moving the column...
+function fix(number, curr_co, des_co) {
+   if (curr_co == des_co) {
+      return
+   }
+   // to explain the logic:
+   // if sth is in the right row/column but still
+   // not in right position when first seeing it
+   // its better to move it out and then fix it
+   // this is inefficient in the first row
+   // but helps us apply general rule
+   // why we need this:
+      // 1 x 2
+      // x x x
+      // x x x
+   // In this case, its simpler to get 2 onto
+   // 2nd row and then put it in
+   // Cases where its inefficient:
+      // x x 1
+      // x x x
+      // x x x
+   // In this case, we would be moving 1 4 times
+   // rather then just 2
+   // As a general rule:
+   // 1. make sure number not in right column or right row
+   // 2. Align column
+   // 3. Align row
+   switch (curr_co) {
+      case (curr_co.row == des_co.row) {
+         move_column(curr_co.col, false)
+         // do not break
+      }
+      case (curr_co.column == des_co.column) {
+         move_row(curr_co.row, true)
+         // do not break
+      }
+      default {
+         //align column
+         //align row
+         //should be simple enough
+      }
+   }
+}
+
+//START IT OFF!
+
+while (board != solved) {
+   // board length is rows * (columns - 1)
+   // -1 bc last row is special
+   for (int i = 0; i < board.length; i++) {
+      coordinates = find(i);
+      //desired_coordinates is where we want
+      //logic to set desired_coordinates is easy
+      fix(i, coordinates, desired_coordinates);
+   }
+}
+//for last row (only works for 3 by 3)
+while (board != solved) {
+   move_row(last_row, true)
+}
