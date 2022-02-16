@@ -66,16 +66,22 @@ def find(desired_number):
             return (row, col)
 
 # Puts the number in right position
+# cor[0] is row, cor[1] is column
 def fix(number, curr_co, des_co):
 
    if curr_co == des_co:
       return
    
+   # If number is in the right row, but wrong position
+   # It it easier to just take it out of the row and solve.
    if (curr_co[0] == des_co[0]):
       move_column(curr_co[1], True)
       move_row(curr_co[0] + 1, False)
       move_column(curr_co[1], False)
       curr_co = find(number)
+
+   # If number is in the right column, but wrong position
+   # It it easier to just take it out of the row and solve.
    if (curr_co[1] == des_co[1]):
       move_row(curr_co[0], False)
    
@@ -88,13 +94,15 @@ def fix(number, curr_co, des_co):
    if (des_co != find(number)):
       print("Error!")
 
-
+# Solves the board
 def solve_board():
    board_length = len(board) * (len(board) - 1)
    for i in range(1, board_length + 1):
       coor = find(i)
-      des_coor = ((i-1)//3,(i-1)%3)
+      des_coor = ((i-1)//len(board),(i-1)%len(board))
       fix(i, coor, des_coor)
+   
+   # For last row
    while board != solved:
       move_row(len(board) - 1, True)
 
