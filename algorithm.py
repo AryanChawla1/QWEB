@@ -6,12 +6,9 @@
       for other square matrices
       (UNTESTED)
 """
-# Randomized board
-board = [
-   [3,6,1],
-   [4,9,2],
-   [5,8,7]
-]
+
+import random
+
 
 # Solved board
 solved = [
@@ -20,6 +17,27 @@ solved = [
    [7,8,9]
 ]
 
+# Slicing array
+board = [row[:] for row in solved]
+
+
+# Scrambles board
+def scramble_board():
+   counter = random.randint(0, len(board) ** 2)
+   for i in range(counter):
+      # row or column
+      r_c = random.randint(0,1)
+      # true or false
+      t_f = random.randint(0,1)
+      # index
+      value = random.randint(0, len(board)-1)
+      if r_c == 1:
+         move_row(value, t_f == 1)
+      else:
+         move_column(value, t_f == 1)
+
+
+# Prints board
 def print_board():
    for i in range(len(board)):
       print(board[i])
@@ -109,5 +127,5 @@ def solve_board():
    while board != solved:
       move_row(len(board) - 1, True)
 
-
+scramble_board()
 solve_board()
