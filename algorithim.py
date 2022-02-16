@@ -16,6 +16,8 @@ solved = [
    [7,8,9]
 ]
 
+
+
 # Moves the row, right = True, left = False
 def move_row(row_index, direction):
 
@@ -29,6 +31,8 @@ def move_row(row_index, direction):
       for index in range(len(board) - 1, 0, -1):
          board[row_index][index] = board[row_index][index - 1]
       board[row_index][0] = temp
+
+
 
 # Moves the column, down = True, up = False
 def move_column(column_index, direction):
@@ -44,13 +48,10 @@ def move_column(column_index, direction):
          board[index][column_index] = board[index - 1][column_index]
       board[0][column_index] = temp
 
-def test():
-   print(board)
-   move_column(0, True)
-   print(board)
-   move_column(1, False)
-   print(board)
-   move_column(2, True)
-   print(board)
 
-test()
+# Finds number in board, returns (row, col)
+def find(desired_number):
+   for row in range(len(board)):
+      for col in range(len(board)):
+         if board[row][col] == desired_number:
+            return (row, col)
