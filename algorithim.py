@@ -95,8 +95,8 @@ def solve_board():
       coor = find(i)
       des_coor = ((i-1)//3,(i-1)%3)
       fix(i, coor, des_coor)
-   # while board != solved:
-   #    move_row(len(board) - 1, True)
+   while board != solved:
+      move_row(len(board) - 1, True)
 
 
 solve_board()
