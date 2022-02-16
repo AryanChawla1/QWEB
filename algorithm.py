@@ -2,6 +2,9 @@
    Notes
       Assuming Square Matrix
       3 by 3 Matrix Only
+      Should do everything but last row
+      for other square matrices
+      (UNTESTED)
 """
 # Randomized board
 board = [
