@@ -90,8 +90,6 @@ def find(desired_number):
 # cor[0] is row, cor[1] is column
 def fix(number, curr_co, des_co):
 
-   print("Solving", number)
-
    if curr_co == des_co:
       return
    
@@ -126,11 +124,10 @@ def solve_board():
       des_coor = ((i-1)//len(board),(i-1)%len(board))
       fix(i, coor, des_coor)
    
-   print("Time for Last row")
    # For last row
    solve_last_row(board_length + 1)
 
-
+# Solves last row, screws up last column
 def solve_last_row(number):
 
    if len(board) == 3:
@@ -144,7 +141,7 @@ def solve_last_row(number):
    
    # Now fix others if needed
    for i in range(number + 1, number + len(board)):
-      print("Solving", i)
+
       if (find(i)[1] != ((i-1)%len(board))) or (find(i)[0] != (len(board) - 1)):
          # Perform algorithm to solve
 
@@ -154,16 +151,44 @@ def solve_last_row(number):
                move_row(len(board) - 1, True)
             while find(i)[0] != (len(board) - 1):
                move_column(len(board) - 1, True)
+         # Wrong column
          elif find(i)[1] != ((i-1)%(len(board))):
             while find(i)[1] != (len(board) - 1):
                move_row(len(board) -1, True)
             move_column(len(board) - 1, False)
+            while find(number)[1] != 0:
+               move_row(len(board) - 1, False)
             for j in range(len(board) - (i%len(board))):
                move_row(len(board) -1, True)
             move_column(len(board) - 1, True)
             
          while find(number)[1] != 0:
             move_row(len(board) - 1, False)
+   
+   fix_last_row(len(board))
+
+
+# Fixes last row
+def fix_last_row(number):
+
+   # Get first in position
+   while find(number)[0] != 0:
+      move_column(len(board)-1, False)
+   
+   # Fix others
+   for i in range(number, len(board)*len(board) + number, len(board)):
+
+      if find(i)[0] != (i-1)//len(board):
+         while find(i)[0] != (len(board) - 1):
+            move_column(len(board) -1, True)
+         move_row(len(board) -1, False)
+         while find(number)[0] != 0:
+            move_column(len(board) -1, False)
+         for j in range(len(board) - (i//len(board))):
+            move_column(len(board) -1, True)
+         move_row(len(board) -1, True)
+      while find(number)[0] != 0:
+         move_column(len(board) -1, False)
 
 
 scramble_board()
