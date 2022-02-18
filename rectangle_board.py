@@ -1,13 +1,20 @@
 import random
 
+boardx = random.randint(3, 7)
+boardy = random.randint(3, 7)
+
+
+solved = []
+
+counter = 0
+
+for y in range(0, boardy):
+   solved.append([])
+   for x in range(0, boardx):
+      solved[y].append(counter)
+      counter += 1
 
 # Slicing array
-
-solved = [
-   [1,2,3],
-   [4,5,6],
-   [7,8,9]
-]
 
 board = [row[:] for row in solved]
 
@@ -22,49 +29,49 @@ def scramble_board():
       # index
       value = random.randint(0, len(board)-1)
       if r_c == 1:
-         move_row(value, t_f == 1)
+         try:
+            move_row(value, t_f == 1)
+         except IndexError:
+            move_column(value, t_f == 1)    
       else:
-         move_column(value, t_f == 1)
-
-
+         try:
+            move_column(value, t_f == 1)
+         except IndexError:
+            move_row(value, t_f == 1)   
 
 def print_board():
-   for i in range(len(board)):
-      print(board[i])
-   print("")
+   print('\n'.join([''.join(['{:3}'.format(item) for item in row]) 
+      for row in board]))
+
+   print()
 
 # Moves the row, right = True, left = False
 def move_row(row_index, direction):
 
    if not direction:
       temp = board[row_index][0]
-      for index in range(len(board) - 1):
+      for index in range(boardx - 1):
          board[row_index][index] = board[row_index][index + 1]
-      board[row_index][len(board) - 1] = temp
+      board[row_index][boardx - 1] = temp
    else:
-      temp = board[row_index][len(board) - 1]
-      for index in range(len(board) - 1, 0, -1):
+      temp = board[row_index][boardx - 1]
+      for index in range(boardx - 1, 0, -1):
          board[row_index][index] = board[row_index][index - 1]
       board[row_index][0] = temp
-   
-
-
 
 # Moves the column, down = True, up = False
 def move_column(column_index, direction):
 
    if not direction:
       temp = board[0][column_index]
-      for index in range(len(board) - 1):
+      for index in range(boardy - 1):
          board[index][column_index] = board[index + 1][column_index]
-      board[len(board) - 1][column_index] = temp
+      board[boardy - 1][column_index] = temp
    else:
-      temp = board[len(board) - 1][column_index]
-      for index in range(len(board) - 1, 0, -1):
+      temp = board[boardy - 1][column_index]
+      for index in range(boardy - 1, 0, -1):
          board[index][column_index] = board[index - 1][column_index]
       board[0][column_index] = temp
-   
-
 
 scramble_board()
 print_board()
