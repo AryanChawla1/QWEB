@@ -14,5 +14,5 @@ For any bugs, feel free to share!
 <h2>Variations of Boards</h2>
 
 For the variation boards, and its commands, use a number for the index of the row/column, 1 being the left-most row and top-most column.
-Then, proceed with a direction: 'u' = up, 'd' = down, 'l' = left, 'r' = right. An example of a command is the following, '''3d'''.
+Then, proceed with a direction: 'u' = up, 'd' = down, 'l' = left, 'r' = right. An example of a command is the following, ```3d```.
 When finished, type 'end'.
