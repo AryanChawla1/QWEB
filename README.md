@@ -1,4 +1,4 @@
-<h1>Torus Puzzle Website<h1>
+<h1>Torus Puzzle Website</h1>
 
 ```algorithim.py```- can solve any square matrix of any dimensions. An idea of how the algorithim was thought of can be found under ```algorithim.pseudo```.
 
