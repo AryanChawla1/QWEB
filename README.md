@@ -6,7 +6,7 @@
 
 For an understanding on how the game works, check out https://loopover.xyz.
 
-<h2>Trying out '''algorithim.py'''</h2>
+<h2>Trying out algorithim.py</h2>
 
 Replace ```solved``` with square matrix of your desire, and run program. Make sure to start at 1.
 For any bugs, feel free to share!
