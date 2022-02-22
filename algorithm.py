@@ -24,7 +24,7 @@ board = [row[:] for row in solved]
 
 # Scrambles board
 def scramble_board():
-   counter = random.randint(0, len(board) ** 2)
+   counter = random.randint(0, 75)
    for i in range(counter):
       # row or column
       r_c = random.randint(0,1)
