@@ -6,6 +6,8 @@
 
 For an understanding on how the game works, check out https://loopover.xyz.
 
+Requires Python 3.10.2+.
+
 <h2>Trying out algorithim.py</h2>
 
 Replace ```solved``` with square matrix of your desire, and run program. Make sure to start at 1.
