@@ -39,12 +39,8 @@ def diamond(rows, board):
         for y in range(repeats):
                 board[x][pos + y] = counter
                 counter += 1
-        if x < rows // 2:   
-            repeats += 2
-            pos -= 1
-        else:
-            repeats -= 2
-            pos += 1
+        repeats += 2 if x < rows // 2 else -2
+        pos -= 1 if x < rows // 2 else -1
 
 # diamond(size, startboard)
 # print_board(startboard)

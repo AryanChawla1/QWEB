@@ -38,11 +38,11 @@ def scramble_board():
          move_column(value, t_f == 1)
 
 
-# Prints board
 def print_board():
-   for i in range(len(board)):
-      print(board[i])
-   print("")
+   print('\n'.join([''.join(['{:3}'.format(item) for item in row]) 
+      for row in board]))
+
+   print()
 
 # Moves the row, right = True, left = False
 def move_row(row_index, direction):
