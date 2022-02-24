@@ -1,4 +1,4 @@
 __pycache__
 .idea
 db.sqlite3
-secret_settings.py
+QwebBackend/secret_settings
