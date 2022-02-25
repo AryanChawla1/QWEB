@@ -18,6 +18,8 @@ def move_row(rdex, direction, board):
       for index in range(end - 1, 0, -1):
          board[rdex][index] = board[rdex][index - 1]
       board[rdex][beg] = temp
+   
+   # must tell front-end to move_row() for board
 
 # Moves the column, down = True, up = False
 def move_column(cdex, direction, board):
@@ -38,6 +40,8 @@ def move_column(cdex, direction, board):
       for index in range(end - 1, beg, -1):
          board[index][cdex] = board[index - 1][cdex]
       board[beg][cdex] = temp
+   
+   # must tell front-end to move_column for board
 
 def print_board(board):
    print('\n'.join([''.join(['{:3}'.format(item) for item in row]) 
