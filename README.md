@@ -2,9 +2,11 @@
 
 ```algorithim.py```- can solve any square matrix of any dimensions. An idea of how the algorithim was thought of can be found under ```algorithim.pseudo```.
 
-```rectangle.py``` and ```triangle_board.py``` created by Ronald Sun. They are variations to the common Torus Puzzle Board with different shapes, used in the daily puzzle.
+```shape_generators.py```, ```functions.py```, and ```torus_game.py``` created by Ronald Sun. They are variations to the common Torus Puzzle Board with different shapes, used in the daily puzzle.
 
 For an understanding on how the game works, check out https://loopover.xyz.
+
+Requires Python 3.10.2, Django 4.0.2, DjangoRestFramework 3.13.1.
 
 <h2>Trying out algorithim.py</h2>
 
@@ -16,3 +18,8 @@ For any bugs, feel free to share!
 For the variation boards, and its commands, use a number for the index of the row/column, 1 being the left-most row and top-most column.
 Then, proceed with a direction: 'u' = up, 'd' = down, 'l' = left, 'r' = right. An example of a command is the following, ```3d```.
 When finished, type 'end'.
+
+<h2>Testing QwebBackend</h2>
+
+Using the terminal, make sure you are in the QwebBackend directory. You can do this using ```cd QwebBackend```. After which, to run the server,
+enter ```python manage.py runserver```. Note ```python3``` may need to be used.
