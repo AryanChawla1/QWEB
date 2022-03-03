@@ -1,13 +1,30 @@
 html {
-  height: 100%;
-  background-image: linear-gradient(45deg, blueviolet, purple, hotpink);
+  height: 100%
 }
 
-.header_menu {
-  text-align: right;
+body {
+  height: 100%;
+  background-image: linear-gradient(45deg, blueviolet, purple, hotpink);
+  background-repeat: no-repeat;
+  background-size: auto;
+}
+
+.App {
+  height: 100%;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 10% 35% 10% 35% 10%;
+  grid-template-rows: minmax(min-content, 200px) minmax(60%, 600px) minmax(20%, 50px);
 }
 
 .header {
+  grid-column: 4/5;
+  text-align: right;
+}
+
+.header-option {
   background-color: transparent;
   background-repeat: no-repeat;
   border: none;
@@ -16,43 +33,70 @@ html {
   outline: none;
   color: white;
   font-size: large;
-}
-
-#splash {
-  width: 50%;
-  margin-right: 0;
-}
-
-.title {
-  color:white;
-  font-size: min(20vw, 15em);
-  
-  text-align: left;
-  white-space: initial;
-  left: 10%;
-  position: relative;
-  margin-bottom: 0px;
-  margin-top: 0px;
-  margin-right: 0px;
-}
-
-.menu_options {
-  width: 100%
+  padding-top: 50px;
+  margin-right: 50px;
 }
 
 .menu {
-  background-color: white;
-  outline: none;
-  font-size: xx-large;
-  cursor: pointer;
-  border: none;
-  width: 30%;
-  padding-top: 2%;
-  padding-bottom: 2%;
-  border-radius: 25px;
+  display: grid;
+  grid-column: 2/3;
+  grid-row:2/3;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
+#torus {
+  grid-row:1/2;
+  grid-column: 1/3;
+}
+
+#puzzle {
+  grid-row: 2/3;
+  grid-column: 1/3;
+}
+
+.title {
+  font-size: 8vw;
+  color: white;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 #classic {
-  margin-right: 30%;
-  margin-left: 10%;
+  grid-row: 3;
+  grid-column: 1;
+}
+
+#daily {
+  grid-row: 3;
+  grid-column: 3;
+}
+
+.board {
+  display: grid;
+  grid-row: 2;
+  grid-column: 4;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  column-gap: 1%;
+  row-gap: 1%;
+}
+
+.menu-option {
+  height: 75px;
+  border-radius: 15px;
+  border: none;
+  background-color: white;
+  font-size: large;
+  cursor: pointer;
+}
+
+.tiles {
+  background-color: white;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 32.7%;
+  border-radius: 5px;
+  font-size: large;
 }
