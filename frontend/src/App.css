@@ -1,7 +1,58 @@
-.App {
-  text-align: center;
+html {
+  height: 100%;
+  background-image: linear-gradient(45deg, blueviolet, purple, hotpink);
 }
 
-p {
-  color: red;
+.header_menu {
+  text-align: right;
+}
+
+.header {
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  color: white;
+  font-size: large;
+}
+
+#splash {
+  width: 50%;
+  margin-right: 0;
+}
+
+.title {
+  color:white;
+  font-size: min(20vw, 15em);
+  
+  text-align: left;
+  white-space: initial;
+  left: 10%;
+  position: relative;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  margin-right: 0px;
+}
+
+.menu_options {
+  width: 100%
+}
+
+.menu {
+  background-color: white;
+  outline: none;
+  font-size: xx-large;
+  cursor: pointer;
+  border: none;
+  width: 30%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  border-radius: 25px;
+}
+
+#classic {
+  margin-right: 30%;
+  margin-left: 10%;
 }
