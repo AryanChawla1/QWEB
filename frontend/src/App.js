@@ -7,6 +7,7 @@
 import { useState } from 'react';
 import './App.css';
 import Board from './components/Board';
+import helpers from './helpers';
 
 const App = () => {
   const boardWidth = 500
@@ -68,7 +69,7 @@ const App = () => {
       rowTiles[(((i - dir) % rowTiles0.length) + rowTiles0.length) % rowTiles0.length].col = rowTiles0[i].col
       tiles.splice(rowTiles0[i].row * width + rowTiles0[i].col, 1, rowTiles[(((i - dir) % rowTiles.length) + rowTiles.length) % rowTiles.length]);
     }
-    setTiles(JSON.parse(JSON.stringify(tiles)))
+    return JSON.parse(JSON.stringify(tiles))
   }
 
   const moveCol = (tiles, col, dir) => {
@@ -84,42 +85,17 @@ const App = () => {
       colTiles[(((i - dir) % colTiles0.length) + colTiles0.length) % colTiles0.length].row = colTiles0[i].row
       tiles.splice(colTiles0[i].row * width + colTiles0[i].col, 1, colTiles[(((i - dir) % colTiles.length) + colTiles.length) % colTiles.length]);
     }
-    setTiles(JSON.parse(JSON.stringify(tiles)))
+    return JSON.parse(JSON.stringify(tiles))
   }
 
   const shuffleTiles = (w) => {
-    let newTiles = []
+    let newTiles = initTiles(w)
+    for (let i = 0; i < 75; i++) {
+      newTiles = moveRow(newTiles, helpers.randInt(0, w-1), helpers.randInt(0,1))
+      newTiles = moveCol(newTiles, helpers.randInt(0, w-1), helpers.randInt(0,1))
+    }
 
-    //Make array of random indexes
-    let range = []
-    for (let i = 0; i < w ** 2; i++) {
-      range[i] = i
-    }
-    let randomIndexes = []
-    for (let i = 0; i < w ** 2; i++) {
-      const randInd = Math.round(Math.random() * (range.length - 1))
-      randomIndexes[i] = range[randInd]
-      range.splice(randInd, 1); //deletes index from range
-    }
-    //Create randomized board
-    for (let i = 0; i < w ** 2; i++) {
-      newTiles.push(
-        {
-          id: randomIndexes[i] + 1,
-          row: Math.floor(i / w), // Position in array
-          col: i % w,
-        }
-      )
-    }
-    for (let i = 0; i < w ** 2; i++) {
-      if (w <= 5) {
-        newTiles[i].text = String.fromCharCode(65 + randomIndexes[i])
-      }
-      else {
-        newTiles[i].text = randomIndexes[i] + 1
-      }
-    }
-    setCompletedBoard(initTiles(width))
+    setCompletedBoard(initTiles(w))
     setTiles(newTiles)
   }
 
@@ -143,7 +119,8 @@ const App = () => {
         <button className="button1" onClick={() => shuffleTiles(width)}>Shuffle</button>
         <button className="button1">Button</button>
       </div>
-      <Board width={width} tiles={tiles} boardWidth={boardWidth} moveRow={moveRow} moveCol={moveCol} checkIfComplete={checkIfComplete} />
+      <Board width={width} tiles={tiles} boardWidth={boardWidth} moveRow={moveRow} moveCol={moveCol}
+        checkIfComplete={checkIfComplete} setTiles={setTiles} />
     </div>
   )
 }
