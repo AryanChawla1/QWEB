@@ -1,7 +1,6 @@
 //Todo:
 //Move Board functions to Board.js
 //Have tile sliding be continuous instead of one move at a time
-//Numbers slightly offcenter (it's clear with the number 100)
 //Change shuffle function so that it can't generate unsolvable boards
 
 
