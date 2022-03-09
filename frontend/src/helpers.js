@@ -28,5 +28,10 @@ const getVisualPosition = (tile, tileWidth) => {
   }
 }
 
+const randInt = (min, max) => {
+  //Random integer from min to max (inclusive)
+	return Math.floor(Math.random() * (max + 1 - min)) + min;
+}
 
-export default {getTileFromId, packageTiles, getVisualPosition}
+
+export default {getTileFromId, packageTiles, getVisualPosition, randInt}
