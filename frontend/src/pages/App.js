@@ -5,8 +5,8 @@
 
 import { useState } from 'react';
 import '../styles/App.css';
-import Board from './components/Board';
-import helpers from './helpers';
+import Board from '../components/Board';
+import helpers from '../helpers';
 
 const App = () => {
   const boardWidth = 500
