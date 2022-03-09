@@ -1,7 +1,6 @@
 //Todo:
 //Move Board functions to Board.js
 //Have tile sliding be continuous instead of one move at a time
-//Change shuffle function so that it can't generate unsolvable boards
 
 
 import { useState } from 'react';
