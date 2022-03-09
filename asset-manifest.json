@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/toruspuzzle/static/css/main.d8a103a6.css",
+    "main.js": "/toruspuzzle/static/js/main.db53abae.js",
+    "static/js/787.3bd16eb5.chunk.js": "/toruspuzzle/static/js/787.3bd16eb5.chunk.js",
+    "index.html": "/toruspuzzle/index.html",
+    "main.d8a103a6.css.map": "/toruspuzzle/static/css/main.d8a103a6.css.map",
+    "main.db53abae.js.map": "/toruspuzzle/static/js/main.db53abae.js.map",
+    "787.3bd16eb5.chunk.js.map": "/toruspuzzle/static/js/787.3bd16eb5.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d8a103a6.css",
+    "static/js/main.db53abae.js"
+  ]
+}
