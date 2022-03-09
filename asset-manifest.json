@@ -1,15 +1,15 @@
 {
-  "files": {
-    "main.css": "/toruspuzzle/static/css/main.d8a103a6.css",
-    "main.js": "/toruspuzzle/static/js/main.db53abae.js",
-    "static/js/787.3bd16eb5.chunk.js": "/toruspuzzle/static/js/787.3bd16eb5.chunk.js",
-    "index.html": "/toruspuzzle/index.html",
-    "main.d8a103a6.css.map": "/toruspuzzle/static/css/main.d8a103a6.css.map",
-    "main.db53abae.js.map": "/toruspuzzle/static/js/main.db53abae.js.map",
-    "787.3bd16eb5.chunk.js.map": "/toruspuzzle/static/js/787.3bd16eb5.chunk.js.map"
-  },
-  "entrypoints": [
-    "static/css/main.d8a103a6.css",
-    "static/js/main.db53abae.js"
-  ]
+  "main.css": "/toruspuzzle/static/css/main.6b8d3a56.chunk.css",
+  "main.js": "/toruspuzzle/static/js/main.6640698b.chunk.js",
+  "main.js.map": "/toruspuzzle/static/js/main.6640698b.chunk.js.map",
+  "static/js/1.af08dc77.chunk.js": "/toruspuzzle/static/js/1.af08dc77.chunk.js",
+  "static/js/1.af08dc77.chunk.js.map": "/toruspuzzle/static/js/1.af08dc77.chunk.js.map",
+  "static/js/2.65e291d5.chunk.js": "/toruspuzzle/static/js/2.65e291d5.chunk.js",
+  "static/js/2.65e291d5.chunk.js.map": "/toruspuzzle/static/js/2.65e291d5.chunk.js.map",
+  "runtime~main.js": "/toruspuzzle/static/js/runtime~main.be41b768.js",
+  "runtime~main.js.map": "/toruspuzzle/static/js/runtime~main.be41b768.js.map",
+  "static/css/main.6b8d3a56.chunk.css.map": "/toruspuzzle/static/css/main.6b8d3a56.chunk.css.map",
+  "index.html": "/toruspuzzle/index.html",
+  "precache-manifest.bc3afb486e6257b93e633226c8d6ed3e.js": "/toruspuzzle/precache-manifest.bc3afb486e6257b93e633226c8d6ed3e.js",
+  "service-worker.js": "/toruspuzzle/service-worker.js"
 }
