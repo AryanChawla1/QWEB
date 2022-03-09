@@ -5,8 +5,8 @@
 
 
 import { useState } from 'react';
-import './App.css';
-import Board from './components/Board';
+import '../styles/App.css';
+import Board from '../components/Board';
 
 const App = () => {
   const boardWidth = 500
