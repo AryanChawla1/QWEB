@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/toruspuzzle/precache-manifest.559e1ba0183066a91db88b5b52836795.js"
+  "/toruspuzzle/precache-manifest.17980cff71c93e142482b2a091bb7918.js"
 );
 
 workbox.clientsClaim();

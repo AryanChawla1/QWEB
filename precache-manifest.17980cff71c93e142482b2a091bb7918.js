@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "aba87da2b41acf9ecc5c",
+    "revision": "48ef329ecd9c791f2bf7",
     "url": "/toruspuzzle/static/css/main.6b8d3a56.chunk.css"
   },
   {
-    "revision": "aba87da2b41acf9ecc5c",
-    "url": "/toruspuzzle/static/js/main.aba87da2.chunk.js"
+    "revision": "48ef329ecd9c791f2bf7",
+    "url": "/toruspuzzle/static/js/main.48ef329e.chunk.js"
   },
   {
     "revision": "af08dc77e4e76da41e54",
@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/toruspuzzle/static/js/runtime~main.be41b768.js"
   },
   {
-    "revision": "c325b11ef47b5f3ef7e2cac7eac6df8b",
+    "revision": "440a26188adc170573e5848a34a04b13",
     "url": "/toruspuzzle/index.html"
   }
 ];
