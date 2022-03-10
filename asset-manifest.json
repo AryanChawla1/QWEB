@@ -1,7 +1,7 @@
 {
   "main.css": "/toruspuzzle/static/css/main.6b8d3a56.chunk.css",
-  "main.js": "/toruspuzzle/static/js/main.48ef329e.chunk.js",
-  "main.js.map": "/toruspuzzle/static/js/main.48ef329e.chunk.js.map",
+  "main.js": "/toruspuzzle/static/js/main.aba87da2.chunk.js",
+  "main.js.map": "/toruspuzzle/static/js/main.aba87da2.chunk.js.map",
   "static/js/1.af08dc77.chunk.js": "/toruspuzzle/static/js/1.af08dc77.chunk.js",
   "static/js/1.af08dc77.chunk.js.map": "/toruspuzzle/static/js/1.af08dc77.chunk.js.map",
   "static/js/2.65e291d5.chunk.js": "/toruspuzzle/static/js/2.65e291d5.chunk.js",
@@ -10,6 +10,6 @@
   "runtime~main.js.map": "/toruspuzzle/static/js/runtime~main.be41b768.js.map",
   "static/css/main.6b8d3a56.chunk.css.map": "/toruspuzzle/static/css/main.6b8d3a56.chunk.css.map",
   "index.html": "/toruspuzzle/index.html",
-  "precache-manifest.17980cff71c93e142482b2a091bb7918.js": "/toruspuzzle/precache-manifest.17980cff71c93e142482b2a091bb7918.js",
+  "precache-manifest.559e1ba0183066a91db88b5b52836795.js": "/toruspuzzle/precache-manifest.559e1ba0183066a91db88b5b52836795.js",
   "service-worker.js": "/toruspuzzle/service-worker.js"
 }
