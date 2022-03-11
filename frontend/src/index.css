@@ -71,17 +71,27 @@ code {
   }
 }
 
+@keyframes buttonGrow {
+  to {
+    width: 210px;
+    height: 70px;
+  }
+}
+
 .button1 {
   width: 200px;
   height: 60px;
   border-radius: 6px;
   position: absolute;
   font-size: 28px;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
   border: none;
   text-align: center;
   background-color: white;
   color:#5D5FEF;
+}
+.button1:hover {
+  animation: buttonGrow 0.1s 1 ease-in-out forwards;
 }
 .button1:active {
   background: linear-gradient(252.44deg, #EF5DA8 0%, rgba(239, 93, 168, 0) 100%), #5D5FEF;
