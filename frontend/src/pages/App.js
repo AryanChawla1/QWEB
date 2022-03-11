@@ -2,7 +2,6 @@
 //Move Board functions to Board.js
 //Have tile sliding be continuous instead of one move at a time
 
-
 import React, { useState } from 'react';
 import '../styles/App.css';
 import Board from '../components/Board';
