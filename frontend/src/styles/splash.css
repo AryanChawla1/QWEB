@@ -40,8 +40,7 @@
 .navbar {
    text-align: right;
    margin-top: 50px;
-   position: absolute;
-   left: 67%;
+   margin-right: 10%;
 }
 
 .accountStuff {
