@@ -12,7 +12,9 @@ const Splash = () => {
    return(
       <div>
          <div className="navbar">
-            <button className="accountStuff">Create Account</button>
+            <Link to='/create-account'>
+               <button className="accountStuff">Create Account</button>
+            </Link>
             <button className="accountStuff">Sign In</button>
          </div>
          <div className="titleText">TORUS PUZZLE</div>
