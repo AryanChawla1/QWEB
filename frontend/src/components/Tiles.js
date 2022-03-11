@@ -1,25 +1,29 @@
 import { useState } from 'react'
 import React from 'react'
 import Tile from './Tile'
+import helpers from '../helpers'
 
-const Tiles = ({ width, tiles, boardWidth, moveRow, moveCol, checkIfComplete, setTiles }) => {
+const Tiles = ({ width, tiles, boardWidth, moveRow, moveCol, completedBoard, setCompletedBoard, setTiles, nonFunctional}) => {
   const [heldTile, setHeldTile] = useState(null)
 
   const tileHeld = (t) => {
+    if (nonFunctional) return;
     setHeldTile(t)
   }
   const tileReleased = (t) => {
+    if (nonFunctional) return;
     setHeldTile(null)
   }
 
   const tileMovedOnto = (t) => {
+    if (nonFunctional) return;
     if (heldTile != null) {
-      if (heldTile.row < t.row) { moveCol(tiles, t.col, 1) }
-      else if (heldTile.row > t.row) { setTiles(moveCol(tiles, t.col, -1)) }
-      else if (heldTile.col < t.col) { setTiles(moveRow(tiles, t.row, 1)) }
-      else if (heldTile.col > t.col) { setTiles(moveRow(tiles, t.row, -1)) }
+      if (heldTile.row < t.row) { helpers.moveCol(width, tiles, t.col, 1) }
+      else if (heldTile.row > t.row) { setTiles(helpers.moveCol(width, tiles, t.col, -1)) }
+      else if (heldTile.col < t.col) { setTiles(helpers.moveRow(width, tiles, t.row, 1)) }
+      else if (heldTile.col > t.col) { setTiles(helpers.moveRow(width, tiles, t.row, -1)) }
       else { console.log("[!] Error in Tiles/tileMovedOnto") }
-      checkIfComplete()
+      helpers.checkIfComplete(tiles, completedBoard, setCompletedBoard)
     }
   }
 
@@ -27,8 +31,8 @@ const Tiles = ({ width, tiles, boardWidth, moveRow, moveCol, checkIfComplete, se
     <div>
       {tiles.map((tile) => (
         <Tile key={tile.text} tiles={tiles} width={width} tile={tile} boardWidth={boardWidth}
-          moveRow={moveRow} moveCol={moveCol} tileHeld={tileHeld} tileReleased={tileReleased}
-          tileMovedOnto={tileMovedOnto} checkIfComplete={checkIfComplete} />
+          tileHeld={tileHeld} tileReleased={tileReleased}
+          tileMovedOnto={tileMovedOnto} />
       ))}
     </div>
   )

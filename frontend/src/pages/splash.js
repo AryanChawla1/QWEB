@@ -1,7 +1,13 @@
 import React from 'react';
 import '../styles/splash.css';
+import Board from '../components/Board';
+import helpers from '../helpers';
 
 const Splash = () => {
+   const boardWidth = 500
+   const width = 3 //width in tiles
+   const tiles = helpers.initTiles(width)
+
    return(
       <div>
          <div className="navbar">
@@ -13,6 +19,7 @@ const Splash = () => {
             <button className="button1" >Daily</button>
             <button className="button1">Classic</button>
          </div>
+         <Board width={width} tiles={tiles} boardWidth={boardWidth} nonFunctional={true}/>
       </div>
    )
 }
