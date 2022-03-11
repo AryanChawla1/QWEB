@@ -1,11 +1,11 @@
 import React from 'react';
-import '../styles/splash.css';
+import '../styles/Splash.css';
 import Board from '../components/Board';
 import helpers from '../helpers';
 
 const Splash = () => {
    const boardWidth = 500
-   const width = 3 //width in tiles
+   const width = 3
    const tiles = helpers.initTiles(width)
 
    return(
@@ -15,11 +15,11 @@ const Splash = () => {
             <button className="accountStuff">Sign Up</button>
          </div>
          <div className="titleText">TORUS PUZZLE</div>
-         <div className="buttonsMainPage">
-            <button className="button1" >Daily</button>
-            <button className="button1">Classic</button>
+         <button id="Splash-dailyBtn" className="button1" >Daily</button>
+         <button id="Splash-classicBtn" className="button1">Classic</button>
+         <div id="Splash-board" className='board'>
+            <Board width={width} tiles={tiles} boardWidth={boardWidth} nonFunctional={true}/>
          </div>
-         <Board width={width} tiles={tiles} boardWidth={boardWidth} nonFunctional={true}/>
       </div>
    )
 }

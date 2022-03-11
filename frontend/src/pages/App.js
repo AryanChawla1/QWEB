@@ -1,6 +1,8 @@
 //Todo:
-//Move Board functions to Board.js
 //Have tile sliding be continuous instead of one move at a time
+//Add Rest of pages
+//Add Timer
+
 
 import React, { useState } from 'react';
 import '../styles/App.css';
@@ -21,13 +23,11 @@ const App = () => {
         <button onClick={() => helpers.incWidth(width, setWidth, setTiles, setCompletedBoard)}>+</button>
         &emsp;&emsp;&emsp;&emsp;&emsp;
       </div>
-      <div className="titleText">TORUS PUZZLE</div>
-      <div className="buttonsMainPage">
-        <button className="button1" onClick={() => helpers.shuffleTiles(width, setCompletedBoard, setTiles)}>Shuffle</button>
-        <button className="button1">Button</button>
+      <button id="App-startBtn" className="button1" onClick={() => helpers.shuffleTiles(width, setCompletedBoard, setTiles)}>Start</button>
+      <div id="App-board" className="board">
+        <Board width={width} tiles={tiles} boardWidth={boardWidth} completedBoard={completedBoard} 
+        setCompletedBoard={setCompletedBoard} setTiles={setTiles}/>
       </div>
-      <Board width={width} tiles={tiles} boardWidth={boardWidth} completedBoard={completedBoard} 
-      setCompletedBoard={setCompletedBoard} setTiles={setTiles} />
     </div>
   )
 }

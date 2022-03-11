@@ -36,3 +36,14 @@
     transform: rotate(360deg);
   }
 }
+
+#App-board {
+  top: 10%;
+  left: 50%;
+}
+
+#App-startBtn {
+  position: absolute;
+  top: 85%;
+  left: 50%;
+}

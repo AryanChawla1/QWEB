@@ -15,11 +15,8 @@ code {
 
 .board {
   position: absolute;
-  width: 500px;
-  height: 500px;
-  left: 55%; 
-  top: 20%;
-  font-size:0px;
+  mix-blend-mode: lighten;
+  transform: translateX(-50%);
 }
 
 .tile {
@@ -28,7 +25,6 @@ code {
   user-select: none;
   border: none;
   font-size: 0;
-  mix-blend-mode: lighten;
 }
 .tileOuter {
   position: absolute;
@@ -44,7 +40,7 @@ code {
   padding: 0px;
   display: grid;
 	place-items: center;
-  color: 'black';
+  color: black;
 }
 
 .gradtext {
@@ -75,18 +71,11 @@ code {
   }
 }
 
-.buttonsMainPage {
-  position:absolute;
-  top: 75%;
-  left: 18%;
-  animation: yourNewSuperpower 1s;
-}
-
 .button1 {
   width: 200px;
   height: 60px;
   border-radius: 6px;
-  position: relative;
+  position: absolute;
   font-size: 28px;
   transform: translateX(-50%);
   border: none;
@@ -97,7 +86,4 @@ code {
 .button1:active {
   background: linear-gradient(252.44deg, #EF5DA8 0%, rgba(239, 93, 168, 0) 100%), #5D5FEF;
   -webkit-text-fill-color: white;
-}
-.button1 + .button1 {
-  margin-left: 90px;
 }

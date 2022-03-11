@@ -37,6 +37,11 @@
    }
 }
 
+#Splash-board {
+   left: 70%; 
+   top: 20%;
+ }
+
 .navbar {
    text-align: right;
    margin-top: 50px;
@@ -52,4 +57,14 @@
    color: white;
    font-size: x-large;
    margin-right: 50px;
+}
+
+#Splash-dailyBtn {
+   left: 19%; 
+   top: 75%;
+}
+
+#Splash-classicBtn {
+   left: 36%; 
+   top: 75%;
 }
