@@ -13,7 +13,7 @@ const Splash = () => {
       <div>
          <div className="navbar">
             <button className="accountStuff">Create Account</button>
-            <button className="accountStuff">Sign Up</button>
+            <button className="accountStuff">Sign In</button>
          </div>
          <div className="titleText">TORUS PUZZLE</div>
          <Link to="/daily">
