@@ -3,7 +3,7 @@ import React from 'react'
 import Tile from './Tile'
 import helpers from '../helpers'
 
-const Tiles = ({ width, tiles, boardWidth, moveRow, moveCol, completedBoard, setCompletedBoard, setTiles, nonFunctional}) => {
+const Tiles = ({ width, tiles, boardWidth, completedBoard, setCompletedBoard, setTiles, nonFunctional}) => {
   const [heldTile, setHeldTile] = useState(null)
 
   const tileHeld = (t) => {
@@ -30,7 +30,7 @@ const Tiles = ({ width, tiles, boardWidth, moveRow, moveCol, completedBoard, set
   return (
     <div>
       {tiles.map((tile) => (
-        <Tile key={tile.text} tiles={tiles} width={width} tile={tile} boardWidth={boardWidth}
+        <Tile key={tile.id} width={width} tile={tile} boardWidth={boardWidth}
           tileHeld={tileHeld} tileReleased={tileReleased}
           tileMovedOnto={tileMovedOnto} />
       ))}

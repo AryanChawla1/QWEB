@@ -2,7 +2,7 @@
 //Have tile sliding be continuous instead of one move at a time
 //Add Rest of pages
 //Add Timer
-
+//Move splash page buttons down a little
 
 import React, { useState } from 'react';
 import '../styles/App.css';
