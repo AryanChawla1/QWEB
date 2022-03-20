@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import '../styles/VSBot.css';
 import Board from '../components/Board';
 import helpers from '../helpers';
+import { Link } from 'react-router-dom';
 
 const VSBot = () => {
   const boardWidth = 500
@@ -12,6 +13,12 @@ const VSBot = () => {
 
   return (
     <div>
+      <div className="navbar">
+        <Link to='/create-account'>
+          <button className="accountStuff">Create Account</button>
+        </Link>
+        <button className="accountStuff">Sign In</button>
+      </div>
       <button id="VSBot-startBtn" className="button1" onClick={() => helpers.shuffleTiles(width, setCompletedBoard, [setTilesB, setTilesP])}>Start</button>
       <div id="VSBot-botBoard" className="board">
         <Board width={width} tiles={tilesB} boardWidth={boardWidth} completedBoard={completedBoard} 

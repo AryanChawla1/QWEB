@@ -8,6 +8,7 @@ import React, { useState } from 'react';
 import '../styles/Classic.css';
 import Board from '../components/Board';
 import helpers from '../helpers';
+import { Link } from 'react-router-dom';
 
 const Classic = () => {
   const boardWidth = 500
@@ -17,6 +18,12 @@ const Classic = () => {
 
   return (
     <div>
+      <div className="navbar">
+        <Link to='/create-account'>
+          <button className="accountStuff">Create Account</button>
+        </Link>
+        <button className="accountStuff">Sign In</button>
+      </div>
       <button id="App-startBtn" className="button1" onClick={() => helpers.shuffleTiles(width, setCompletedBoard, setTiles)}>Start</button>
       <div id="App-board" className="board">
         <Board width={width} tiles={tiles} boardWidth={boardWidth} completedBoard={completedBoard} 
