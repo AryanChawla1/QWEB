@@ -25,7 +25,7 @@ const Splash = () => {
             <button id="Splash-classicBtn" className="button1">Classic</button>
          </Link>
          <div id="Splash-board" className='board'>
-            <Board width={width} tiles={tiles} boardWidth={boardWidth} nonFunctional={true}/>
+            <Board width={width} tiles={tiles} boardWidth={boardWidth} nonInteractable={true}/>
          </div>
       </div>
    )

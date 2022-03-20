@@ -50,11 +50,6 @@ code {
   -webkit-text-fill-color: transparent;
 }
 
-.topbar {
-  background-color: whitesmoke;
-}
-
-
 .titleText {
   position: absolute;
   font-size: 160px;

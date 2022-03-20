@@ -3,20 +3,20 @@ import React from 'react'
 import Tile from './Tile'
 import helpers from '../helpers'
 
-const Tiles = ({ width, tiles, boardWidth, completedBoard, setCompletedBoard, setTiles, nonFunctional}) => {
+const Tiles = ({ width, tiles, boardWidth, completedBoard, setCompletedBoard, setTiles, nonInteractable}) => {
   const [heldTile, setHeldTile] = useState(null)
 
   const tileHeld = (t) => {
-    if (nonFunctional) return;
+    if (nonInteractable) return;
     setHeldTile(t)
   }
   const tileReleased = (t) => {
-    if (nonFunctional) return;
+    if (nonInteractable) return;
     setHeldTile(null)
   }
 
   const tileMovedOnto = (t) => {
-    if (nonFunctional) return;
+    if (nonInteractable) return;
     if (heldTile != null) {
       if (heldTile.row < t.row) { helpers.moveCol(width, tiles, t.col, 1) }
       else if (heldTile.row > t.row) { setTiles(helpers.moveCol(width, tiles, t.col, -1)) }

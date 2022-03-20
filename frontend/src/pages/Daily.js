@@ -12,12 +12,6 @@ const App = () => {
 
   return (
     <div>
-      <div className="topbar">
-        <button onClick={() => helpers.decWidth(width, setWidth, setTiles, setCompletedBoard)}>-</button>  &ensp;
-        <span className="gradtext">Board Size</span>  &ensp;
-        <button onClick={() => helpers.incWidth(width, setWidth, setTiles, setCompletedBoard)}>+</button>
-        &emsp;&emsp;&emsp;&emsp;&emsp;
-      </div>
       <button id="Daily-startBtn" className="button1" onClick={() => helpers.shuffleTiles(width, setCompletedBoard, setTiles)}>Start</button>
       <div id="Daily-board" className="board">
         <Board width={width} tiles={tiles} boardWidth={boardWidth} completedBoard={completedBoard} 
@@ -28,3 +22,4 @@ const App = () => {
 }
 
 export default App
+//<button onClick={() => helpers.incWidth(width, setWidth, setTiles, setCompletedBoard)}>+</button>

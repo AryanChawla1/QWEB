@@ -62,7 +62,15 @@ const shuffleTiles = (w, setCompletedBoard, setTiles) => {
     newTiles = moveCol(w, newTiles, randInt(0, w-1), randInt(0,1))
   }
   setCompletedBoard(initTiles(w))
-  setTiles(newTiles)
+  if (Array.isArray(setTiles)) {
+    for (let i = 0; i < setTiles.length; i++) {
+      setTiles[i](newTiles.slice())
+      console.log("dasd")
+    }
+  }
+  else {
+    setTiles(newTiles)
+  }
 }
 
 const checkIfComplete = (tiles, completedBoard, setCompletedBoard) => {

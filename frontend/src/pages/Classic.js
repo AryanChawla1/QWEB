@@ -5,11 +5,11 @@
 //Move splash page buttons down a little
 
 import React, { useState } from 'react';
-import '../styles/App.css';
+import '../styles/Classic.css';
 import Board from '../components/Board';
 import helpers from '../helpers';
 
-const App = () => {
+const Classic = () => {
   const boardWidth = 500
   const [width, setWidth] = useState(3) //width in tiles
   const [tiles, setTiles] = useState(() => helpers.initTiles(width))
@@ -17,12 +17,6 @@ const App = () => {
 
   return (
     <div>
-      <div className="topbar">
-        <button onClick={() => helpers.decWidth(width, setWidth, setTiles, setCompletedBoard)}>-</button>  &ensp;
-        <span className="gradtext">Board Size</span>  &ensp;
-        <button onClick={() => helpers.incWidth(width, setWidth, setTiles, setCompletedBoard)}>+</button>
-        &emsp;&emsp;&emsp;&emsp;&emsp;
-      </div>
       <button id="App-startBtn" className="button1" onClick={() => helpers.shuffleTiles(width, setCompletedBoard, setTiles)}>Start</button>
       <div id="App-board" className="board">
         <Board width={width} tiles={tiles} boardWidth={boardWidth} completedBoard={completedBoard} 
@@ -32,7 +26,7 @@ const App = () => {
   )
 }
 
-export default App
+export default Classic
 
 
 //console.log(JSON.parse(JSON.stringify(object)))
