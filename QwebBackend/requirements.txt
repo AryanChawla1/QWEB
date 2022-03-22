@@ -1,3 +1,0 @@
-python==3.10.2
-django==4.0.2
-djangorestframework==3.13.1
