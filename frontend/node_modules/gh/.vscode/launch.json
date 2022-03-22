@@ -1,0 +1,42 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Normal Mode",
+            "type": "node",
+            "request": "launch",
+            "runtimeArgs": ["-r", "ts-node/register"],
+            "args": [
+                "${workspaceFolder}/src/debug.ts",
+                "re",
+                "-c",
+                "-u",
+                "Product",
+                "--repo",
+                "service-lumin"
+            ],
+            // "args": ["${workspaceFolder}/src/debug.ts", "ji", "LWM-117", "--status"],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Testing Mode",
+            "type": "node",
+            "request": "launch",
+            "env": {
+                "NODE_ENV": "testing",
+                "GH_USER": "protoEvangelion",
+                "GH_TOKEN": "0001",
+                "GENERATE_NEW_TOKEN": "true"
+            },
+            "osx": {
+                "DEBUG": "nock.*"
+            },
+            "runtimeArgs": ["-r", "ts-node/register"],
+            "args": ["${workspaceFolder}/src/debug.ts", "user", "--login"],
+            "console": "integratedTerminal"
+        }
+    ]
+}
