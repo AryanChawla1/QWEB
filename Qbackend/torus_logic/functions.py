@@ -1,7 +1,8 @@
 import random
 
 # Moves the row, right = True, left = False
-def move_row(rdex, direction, board):
+# Log is used when we want to return the command performed
+def move_row(rdex, direction, board, log=False):
 
    length = len(board[rdex])
 
@@ -19,10 +20,14 @@ def move_row(rdex, direction, board):
          board[rdex][index] = board[rdex][index - 1]
       board[rdex][beg] = temp
    
-   # must tell front-end to move_row() for board
+   if log:
+      if direction:
+         return "r" + str(rdex)
+      else:
+         return "l" + str(rdex)
 
 # Moves the column, down = True, up = False
-def move_column(cdex, direction, board):
+def move_column(cdex, direction, board, log=False):
 
    column = [row[cdex] for row in board]
    length = len(column)
@@ -41,7 +46,11 @@ def move_column(cdex, direction, board):
          board[index][cdex] = board[index - 1][cdex]
       board[beg][cdex] = temp
    
-   # must tell front-end to move_column for board
+   if log:
+      if direction:
+         return "d" + str(cdex)
+      else:
+         return "u" + str(cdex)
 
 def print_board(board):
    print('\n'.join([''.join(['{:3}'.format(item) for item in row]) 

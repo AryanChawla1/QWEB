@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+<<<<<<< HEAD:Qbackend/Qbackend/settings.py
     # 3rd Party Apps
     'rest_framework', # new
     'rest_framework.authtoken', # new
@@ -50,6 +51,9 @@ INSTALLED_APPS = [
     # Local Apps
     'users', # new
 
+=======
+    'accounts',
+>>>>>>> 3332b44bd5c4b8e4f2aea61c590bd060d1b7c735:backend/QwebBackend/settings.py
 ]
 
 MIDDLEWARE = [

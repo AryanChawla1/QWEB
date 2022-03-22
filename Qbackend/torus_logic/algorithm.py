@@ -19,6 +19,9 @@ solved = [
 # Slicing array
 board = [row[:] for row in solved]
 
+# To store commands for front-end.
+log_commands = []
+log = True
 
 # Finds number in board, returns (row, col)
 def find(desired_number):
@@ -39,23 +42,23 @@ def fix(number, curr_co, des_co):
    # If number is in the right row, but wrong position
    # It it easier to just take it out of the row and solve.
    if (curr_co[0] == des_co[0]):
-      move_column(curr_co[1], True, board)
-      move_row(curr_co[0] + 1, False, board)
-      move_column(curr_co[1], False, board)
+      log_commands.append(move_column(curr_co[1], True, board, log))
+      log_commands.append(move_row(curr_co[0] + 1, False, board, log))
+      log_commands.append(move_column(curr_co[1], False, board, log))
       curr_co = find(number)
 
    # If number is in the right column, but wrong position
    # It it easier to just take it out of the row and solve.
    if (curr_co[1] == des_co[1]):
-      move_row(curr_co[0], False, board)
+      log_commands.append(move_row(curr_co[0], False, board, log))
    
    for i in range(abs(des_co[0] - curr_co[0])):
-      move_column(des_co[1], True, board)
+      log_commands.append(move_column(des_co[1], True, board, log))
    # Can be optimized
    while (find(number)[1] != des_co[1]):
-      move_row(find(number)[0], True, board)
+      log_commands.append(move_row(find(number)[0], True, board, log))
    while (find(number)[0] != des_co[0]):
-      move_column(find(number)[1], False, board)
+      log_commands.append(move_column(find(number)[1], False, board, log))
    if (des_co != find(number)):
       print("Error!")
 
@@ -77,12 +80,12 @@ def solve_last_row(number):
 
    if len(board) == 3:
       while board != solved:
-         move_row(len(board) - 1, True, board)
+         log_commands.append(move_row(len(board) - 1, True, board, log))
       return
    
    # Get first in position
    while find(number)[1] != 0:
-      move_row(len(board) - 1, False, board)
+      log_commands.append(move_row(len(board) - 1, False, board, log))
    
    # Now fix others if needed
    for i in range(number + 1, number + len(board)):
@@ -93,22 +96,22 @@ def solve_last_row(number):
          # Check if number is in wrong row
          if find(i)[0] != (len(board) - 1):
             for j in range(len(board) - (i%len(board))):
-               move_row(len(board) - 1, True, board)
+               log_commands.append(move_row(len(board) - 1, True, board, log))
             while find(i)[0] != (len(board) - 1):
-               move_column(len(board) - 1, True, board)
+               log_commands.append(move_column(len(board) - 1, True, board, log))
          # Wrong column
          elif find(i)[1] != ((i-1)%(len(board))):
             while find(i)[1] != (len(board) - 1):
-               move_row(len(board) -1, True, board)
-            move_column(len(board) - 1, False, board)
+               log_commands.append(move_row(len(board) -1, True, board, log))
+            log_commands.append(move_column(len(board) - 1, False, board, log))
             while find(number)[1] != 0:
-               move_row(len(board) - 1, False, board)
+               log_commands.append(move_row(len(board) - 1, False, board, log))
             for j in range(len(board) - (i%len(board))):
-               move_row(len(board) -1, True, board)
-            move_column(len(board) - 1, True, board)
+               log_commands.append(move_row(len(board) -1, True, board, log))
+            log_commands.append(move_column(len(board) - 1, True, board, log))
             
          while find(number)[1] != 0:
-            move_row(len(board) - 1, False, board)
+            log_commands.append(move_row(len(board) - 1, False, board, log))
    
    fix_last_column(len(board))
 
@@ -118,25 +121,26 @@ def fix_last_column(number):
 
    # Get first in position
    while find(number)[0] != 0:
-      move_column(len(board)-1, False, board)
+      log_commands.append(move_column(len(board)-1, False, board, log))
    
    # Fix others
    for i in range(number, len(board)*len(board) + number, len(board)):
 
       if find(i)[0] != (i-1)//len(board):
          while find(i)[0] != (len(board) - 1):
-            move_column(len(board) -1, True, board)
-         move_row(len(board) -1, False, board)
+            log_commands.append(move_column(len(board) -1, True, board, log))
+         log_commands.append(move_row(len(board) -1, False, board, log))
          while find(number)[0] != 0:
-            move_column(len(board) -1, False, board)
+            log_commands.append(move_column(len(board) -1, False, board, log))
          for j in range(len(board) - (i//len(board))):
-            move_column(len(board) -1, True, board)
-         move_row(len(board) -1, True, board)
+            log_commands.append(move_column(len(board) -1, True, board, log))
+         log_commands.append(move_row(len(board) -1, True, board, log))
       while find(number)[0] != 0:
-         move_column(len(board) -1, False, board)
+         log_commands.append(move_column(len(board) -1, False, board, log))
 
 
 shuffle(board)
 print_board(board)
 solve_board()
 print_board(board)
+print(log_commands)
