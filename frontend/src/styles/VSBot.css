@@ -38,12 +38,12 @@
   }
   
   #VSBot-botBoard {
-    top: 8%;
+    top: 44%;
     left: 22%;
   }
 
   #VSBot-playerBoard {
-    top: 8%;
+    top: 44%;
     left: 68%;
   }
   
@@ -52,3 +52,13 @@
     top: 85%;
     left: 45%;
   }
+
+#VSBot-boardSizeBtns {
+  position: absolute;
+  top: 90%;
+  left: 60%;
+  text-align: center;
+  color: white;
+  align-items:center;
+  margin:0 auto;
+}

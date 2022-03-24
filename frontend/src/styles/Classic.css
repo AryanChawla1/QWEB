@@ -1,19 +1,19 @@
-.App {
+.Classic {
   text-align: center;
 }
 
-.App-logo {
+.Classic-logo {
   height: 40vmin;
   pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
+  .Classic-logo {
     animation: App-logo-spin infinite 20s linear;
   }
 }
 
-.App-header {
+.Classic-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -24,7 +24,7 @@
   color: white;
 }
 
-.App-link {
+.Classic-link {
   color: #61dafb;
 }
 
@@ -37,13 +37,23 @@
   }
 }
 
-#App-board {
-  top: 10%;
-  left: 50%;
+#Classic-board {
+  top: 44%;
+  left: 46%;
 }
 
-#App-startBtn {
+#Classic-startBtn {
   position: absolute;
   top: 85%;
-  left: 50%;
+  left: 46%;
+}
+
+#Classic-boardSizeBtns {
+  position: absolute;
+  top: 93%;
+  left: 75%;
+  text-align: center;
+  color: white;
+  align-items:center;
+  margin:0 auto;
 }

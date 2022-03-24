@@ -17,13 +17,21 @@ const App = () => {
         <Link to='/create-account'>
           <button className="accountStuff">Create Account</button>
         </Link>
+        <Link to='/sign-in'>
         <button className="accountStuff">Sign In</button>
+        </Link>
       </div>
       <button id="Daily-startBtn" className="button1" onClick={() => helpers.shuffleTiles(width, setCompletedBoard, setTiles)}>Start</button>
       <div id="Daily-board" className="board">
         <Board width={width} tiles={tiles} boardWidth={boardWidth} completedBoard={completedBoard} 
         setCompletedBoard={setCompletedBoard} setTiles={setTiles}/>
       </div>
+      <div id="Daily-boardSizeBtns">
+        <button className="button2" onClick={() => helpers.decWidth(width, setWidth, setTiles, setCompletedBoard)}>-</button>
+        &nbsp;&nbsp;Board Size&nbsp;&nbsp;
+        <button className="button2" onClick={() => helpers.incWidth(width, setWidth, setTiles, setCompletedBoard)}>+</button>
+      </div>
+      <Link to='/daily/leaderboard'><button>Leaderboard</button></Link>
     </div>
   )
 }
