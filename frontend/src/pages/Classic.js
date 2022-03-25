@@ -5,10 +5,13 @@
 //Move splash page buttons down a little
 
 import React, { useState } from 'react';
-import '../styles/Classic.css';
-import Board from '../components/Board';
-import helpers from '../helpers';
 import { Link } from 'react-router-dom';
+
+import '../styles/Classic.css';
+
+import Board from '../components/Board';
+import Timer from '../components/Timer';
+import helpers from '../helpers';
 
 const Classic = () => {
   const boardWidth = 500
@@ -29,6 +32,7 @@ const Classic = () => {
         <Board width={width} tiles={tiles} boardWidth={boardWidth} completedBoard={completedBoard} 
         setCompletedBoard={setCompletedBoard} setTiles={setTiles}/>
       </div>
+        <Timer />
     </div>
   )
 }
