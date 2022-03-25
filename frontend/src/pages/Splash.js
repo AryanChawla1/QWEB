@@ -15,7 +15,9 @@ const Splash = () => {
             <Link to='/create-account'>
                <button className="accountStuff">Create Account</button>
             </Link>
+            <Link to='/sign-in'>
             <button className="accountStuff">Sign In</button>
+            </Link>
          </div>
          <div className="titleText">TORUS PUZZLE</div>
          <Link to="/daily">

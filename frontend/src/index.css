@@ -16,7 +16,7 @@ code {
 .board {
   position: absolute;
   mix-blend-mode: lighten;
-  transform: translateX(-50%);
+  transform: translate(-50%,-50%);
 }
 
 .tile {
@@ -25,6 +25,7 @@ code {
   user-select: none;
   border: none;
   font-size: 0;
+  overflow:visible;
 }
 .tileOuter {
   position: absolute;
@@ -33,7 +34,7 @@ code {
   border: none;
 }
 .tileInner {
-  position:relative;
+  position: relative;
   font-weight: 500;
   background-color: white;
   border-radius: 6px; /*rounded edges*/
@@ -66,13 +67,14 @@ code {
   }
 }
 
-@keyframes buttonGrow {
+@keyframes button1Grow {
   to {
     width: 210px;
     height: 70px;
   }
 }
 
+/* white, rectanglular */
 .button1 {
   width: 200px;
   height: 60px;
@@ -84,11 +86,69 @@ code {
   text-align: center;
   background-color: white;
   color:#5D5FEF;
+  padding:0;
 }
 .button1:hover {
-  animation: buttonGrow 0.1s 1 ease-in-out forwards;
+  animation: button1Grow 0.1s 1 ease-in-out forwards;
 }
 .button1:active {
   background: linear-gradient(252.44deg, #EF5DA8 0%, rgba(239, 93, 168, 0) 100%), #5D5FEF;
   -webkit-text-fill-color: white;
+}
+
+/* small, circular */
+.button2 {
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  position: relative;
+  font-size: 20px;
+  border: none;
+  text-align: center;
+  background-color: white;
+  color:#5D5FEF;
+  padding:0px;
+  margin: 0 auto;
+}
+.button2:hover {
+  background-color: lightgray;
+}
+.button2:active {
+  background: linear-gradient(252.44deg, #EF5DA8 0%, rgba(239, 93, 168, 0) 100%), #5D5FEF;
+  -webkit-text-fill-color: white;
+}
+
+.leaderBoard {
+  position: absolute;
+  width: 400px;
+  height: 300px;
+  overflow:auto;
+}
+
+.LBEntry {
+  position: relative;
+  padding: 15px;
+  color: white;
+  font-size: 25px;
+}
+.LBEntry-Field1 {
+  position:absolute;
+  text-align: left;
+  left:0px;
+  width:150px;
+  overflow:hidden;
+}
+.LBEntry-Field2 {
+  position:absolute;
+  text-align: left;
+  left:180px;
+  width:30px;
+  overflow: hidden;
+}
+.LBEntry-Field3 {
+  position:absolute;
+  text-align: left;
+  left:240px;
+  width:110px;
+  overflow: hidden;
 }
