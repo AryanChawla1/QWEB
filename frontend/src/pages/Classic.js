@@ -29,6 +29,8 @@ const Classic = () => {
         <button className="accountStuff">Sign In</button>
         </Link>
       </div>
+      <Link to='/VSBot'><button>VS Bot</button></Link>
+      <Link to='/classic/leaderboard'><button>Leaderboard</button></Link>
       <button id="Classic-startBtn" className="button1" onClick={() => helpers.shuffleTiles(width, setCompletedBoard, setTiles)}>Start</button>
       <div id="Classic-board" className="board">
         <Board width={width} tiles={tiles} boardWidth={boardWidth} completedBoard={completedBoard} 
@@ -40,8 +42,6 @@ const Classic = () => {
         &nbsp;&nbsp;Board Size&nbsp;&nbsp;
         <button className="button2" onClick={() => helpers.incWidth(width, setWidth, setTiles, setCompletedBoard)}>+</button>
       </div>
-      <Link to='/VSBot'><button>VS Bot</button></Link>
-      <Link to='/classic/leaderboard'><button>Leaderboard</button></Link>
     </div>
   )
 }

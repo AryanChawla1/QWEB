@@ -14,7 +14,7 @@ const CreateAccount = () => {
             <input type="email" id="email" name="email" autocomplete="email" required/><br/>
             <label for="password">Password</label><br/>
             <input type="password" id="current-password" name="password" autocomplete="current-password" required/><br/>
-            <input type="submit" value="Create Account" /> 
+            <input type="submit" value="Sign In" /> 
          </form>
       </div>
    )
