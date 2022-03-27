@@ -65,7 +65,6 @@ const shuffleTiles = (w, setCompletedBoard, setTiles) => {
   if (Array.isArray(setTiles)) {
     for (let i = 0; i < setTiles.length; i++) {
       setTiles[i](newTiles.slice())
-      console.log("dasd")
     }
   }
   else {
@@ -116,7 +115,15 @@ const incWidth = (w, setWidth, setTiles, setCompletedBoard) => {
   if (w < 10) {
     w += 1
     setWidth(w)
-    setTiles(initTiles(w))
+    if (Array.isArray(setTiles)) {
+      console.log("iusarray")
+      for (let i = 0; i < setTiles.length; i++) {
+        setTiles[i](initTiles(w))
+      }
+    }
+    else {
+      setTiles(initTiles(w))
+    }
     setCompletedBoard([])
   }
 }
@@ -125,7 +132,14 @@ const decWidth = (w, setWidth, setTiles, setCompletedBoard) => {
   if (w > 3) {
     w -= 1
     setWidth(w)
-    setTiles(initTiles(w))
+    if (Array.isArray(setTiles)) {
+      for (let i = 0; i < setTiles.length; i++) {
+        setTiles[i](initTiles(w))
+      }
+    }
+    else {
+      setTiles(initTiles(w))
+    }
     setCompletedBoard([])
   }
 }

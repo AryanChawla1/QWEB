@@ -17,7 +17,9 @@ const VSBot = () => {
         <Link to='/create-account'>
           <button className="accountStuff">Create Account</button>
         </Link>
+        <Link to='/sign-in'>
         <button className="accountStuff">Sign In</button>
+        </Link>
       </div>
       <button id="VSBot-startBtn" className="button1" onClick={() => helpers.shuffleTiles(width, setCompletedBoard, [setTilesB, setTilesP])}>Start</button>
       <div id="VSBot-botBoard" className="board">
@@ -27,6 +29,11 @@ const VSBot = () => {
       <div id="VSBot-playerBoard" className="board">
         <Board width={width} tiles={tilesP} boardWidth={boardWidth} completedBoard={completedBoard} 
         setCompletedBoard={setCompletedBoard} setTiles={setTilesP}/>
+      </div>
+      <div id="VSBot-boardSizeBtns">
+        <button className="button2" onClick={() => helpers.decWidth(width, setWidth, [setTilesB, setTilesP], setCompletedBoard)}>-</button>
+        &nbsp;&nbsp;Board Size&nbsp;&nbsp;
+        <button className="button2" onClick={() => helpers.incWidth(width, setWidth, [setTilesB, setTilesP], setCompletedBoard)}>+</button>
       </div>
     </div>
   )

@@ -38,12 +38,22 @@ Daily {
  }
 
  #Daily-board {
-   top: 10%;
-   left: 50%;
+   top: 44%;
+   left: 46%;
  }
 
  #Daily-startBtn {
    position: absolute;
    top: 85%;
-   left: 50%;
+   left: 46%;
  }
+
+ #Daily-boardSizeBtns {
+  position: absolute;
+  top: 93%;
+  left: 75%;
+  text-align: center;
+  color: white;
+  align-items:center;
+  margin:0 auto;
+}

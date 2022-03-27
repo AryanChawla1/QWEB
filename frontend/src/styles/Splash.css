@@ -39,12 +39,12 @@
 
 #Splash-board {
    left: 70%; 
-   top: 20%;
+   top: 50%;
  }
 
 .navbar {
    text-align: right;
-   margin-top: 50px;
+   margin-top: -0.5%;
    margin-right: 10%;
 }
 

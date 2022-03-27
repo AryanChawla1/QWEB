@@ -1,5 +1,5 @@
 import React from 'react'
-import '../styles/CreateAccount.css'
+import '../styles/SignIn.css'
 import { Link } from 'react-router-dom'
 
 const CreateAccount = () => {
@@ -8,18 +8,13 @@ const CreateAccount = () => {
          <Link to='/'>
             <button id="back-button">Back</button>
          </Link>
-         <Link to='/sign-in'>
-            <button id="sign-in">Sign In</button>
-         </Link>
          <form>
-            <h1>Create Account</h1>
-            <label for="name">Name</label><br/>
-            <input type="text" id="name" name="name" required/><br/>
+            <h1>Sign In</h1>
             <label for="email">Email</label><br/>
             <input type="email" id="email" name="email" autocomplete="email" required/><br/>
             <label for="password">Password</label><br/>
-            <input type="password" id="new-password" name="password" autocomplete="new-password" required/><br/>
-            <input type="submit" value="Create Account" /> 
+            <input type="password" id="current-password" name="password" autocomplete="current-password" required/><br/>
+            <input type="submit" value="Sign In" /> 
          </form>
       </div>
    )
