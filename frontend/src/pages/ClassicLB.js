@@ -26,7 +26,8 @@ const ClassicLB = () => {
           <button className="accountStuff">Sign In</button>
         </Link>
       </div>
-      <div className="ClassicLB-LeaderBoard">
+      <div className="smallHeading" id="ClassicLB-heading">Classic Leaderboard</div>
+      <div id="ClassicLB-LeaderBoard">
         <Leaderboard users={users}></Leaderboard>
       </div>
     </div>

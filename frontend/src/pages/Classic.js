@@ -19,6 +19,17 @@ const Classic = () => {
   const [tiles, setTiles] = useState(() => helpers.initTiles(width))
   const [completedBoard, setCompletedBoard] = useState([])
 
+  const [isActive, setActive] = useState(false)
+
+  const toggleActive = () => {
+    setActive(!isActive)
+  }
+
+  const onStartBtnClick = () => {
+    helpers.shuffleTiles(width, setCompletedBoard, setTiles)
+    toggleActive()
+  }
+
   return (
     <div>
       <div className="navbar">
@@ -31,12 +42,13 @@ const Classic = () => {
       </div>
       <Link to='/VSBot'><button>VS Bot</button></Link>
       <Link to='/classic/leaderboard'><button>Leaderboard</button></Link>
-      <button id="Classic-startBtn" className="button1" onClick={() => helpers.shuffleTiles(width, setCompletedBoard, setTiles)}>Start</button>
+      <button id="Classic-startBtn" className="button1" onClick={() => onStartBtnClick()}>
+        {isActive ? 'Pause' : 'Start'}</button>
       <div id="Classic-board" className="board">
         <Board width={width} tiles={tiles} boardWidth={boardWidth} completedBoard={completedBoard} 
         setCompletedBoard={setCompletedBoard} setTiles={setTiles}/>
       </div>
-        <Timer />
+      <Timer isActive={isActive}/>
       <div id="Classic-boardSizeBtns">
         <button className="button2" onClick={() => helpers.decWidth(width, setWidth, setTiles, setCompletedBoard)}>-</button>
         &nbsp;&nbsp;Board Size&nbsp;&nbsp;

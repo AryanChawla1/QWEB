@@ -120,36 +120,36 @@ code {
 
 .leaderBoard {
   position: absolute;
-  width: 400px;
-  height: 300px;
+  width: 620px;
+  height: 350px;
   overflow:auto;
 }
 
 .LBEntry {
   position: relative;
-  padding: 15px;
+  padding: 18px;
   color: white;
-  font-size: 25px;
+  font-size: 32px;
 }
 .LBEntry-Field1 {
   position:absolute;
   text-align: left;
   left:0px;
-  width:150px;
+  width:200px;
   overflow:hidden;
 }
 .LBEntry-Field2 {
   position:absolute;
   text-align: left;
-  left:180px;
-  width:30px;
+  left:260px;
+  width:60px;
   overflow: hidden;
 }
 .LBEntry-Field3 {
   position:absolute;
   text-align: left;
-  left:240px;
-  width:110px;
+  left:380px;
+  width:220px;
   overflow: hidden;
 }
 
@@ -163,4 +163,18 @@ code {
 ::-webkit-scrollbar-thumb {
   background: white;
   border-radius: 10px;
+}
+
+.largeHeading {
+  position: absolute;
+  font-size: 80px;
+  color: white;
+  width: 50%;
+}
+
+.smallHeading {
+  position: absolute;
+  font-size: 40px;
+  color: white;
+  width: 50%;
 }

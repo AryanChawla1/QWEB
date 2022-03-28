@@ -1,5 +1,10 @@
-.ClassicLB-LeaderBoard {
+#ClassicLB-LeaderBoard {
     position: absolute;
     left: 50%;
-    top: 30%;
+    top: 25%;
+}
+
+#ClassicLB-heading {
+    left:8%;
+    top:25%;
 }
