@@ -57,3 +57,71 @@
   align-items:center;
   margin:0 auto;
 }
+
+.modalButton {
+	background: linear-gradient(252.44deg, #EF5DA8 0%, rgba(239, 93, 168, 0) 100%), #5D5FEF;
+	border: 0;
+	border-radius: 5px;
+	color: #fff;
+	cursor: pointer;
+	font-size: 36px;
+	font-weight: 400;
+	margin-bottom: 30px;
+	padding: 10px 15px;
+	transition: transform 100ms ease-out;
+  position: center;
+  width: 55%;
+  height: 90px;
+}
+.modalButton:hover {
+  background: linear-gradient(252.44deg, #EF5DA8 0%, rgba(239, 93, 168, 0) 100%), #5D5FEF;
+  transform: scale(1.1);
+}
+
+.modal__backdrop {
+	background: rgba(0, 0, 0, .65);
+	bottom: 0;
+	left: 0;
+	overflow: auto;
+	position: fixed;
+	right: 0;
+	top: 0;
+	z-index: 1;
+}
+
+.modal__container {
+	background: #fff;
+	border-radius: 5px;
+	max-width: 100%;
+	margin: 50px auto;
+	padding: 15px;
+	width: 560px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.modalText {
+  color: #5D5FEF;
+	font-size: 36px;
+	font-weight: 400;
+	margin-bottom: 25px;
+  
+}
+
+.close-btn {
+  color: #5d5fefb2;
+  margin: 0;
+  position:absolute;
+  top:0;
+  right:0;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+.close-btn:hover {
+  color: #5D5FEF;
+  transform: scale(1.1);
+}
