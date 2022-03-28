@@ -3,4 +3,8 @@ django==4.0.2
 djangorestframework==3.13.1
 npm==8.5.4
 node==16.14.0
+dj_rest_auth
+django-allauth
+django-cors-headers
+
 
