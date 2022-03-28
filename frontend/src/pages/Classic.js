@@ -79,6 +79,7 @@ const Classic = () => {
     <div>
       {isModalOpen && <Modal onRequestClose={toggleModal} />}
       <div className="navbar">
+      <Link to='/classic/leaderboard'><button>Leaderboard</button></Link>
         <Link to='/create-account'>
           <button className="accountStuff">Create Account</button>
         </Link>
@@ -90,9 +91,8 @@ const Classic = () => {
 				Show the modal
 			</button>
       <Link to='/VSBot'><button>VS Bot</button></Link>
-      <Link to='/classic/leaderboard'><button>Leaderboard</button></Link>
       <button id="Classic-startBtn" className="button1" onClick={() => onStartBtnClick()}>
-        {isActive ? 'Pause' : 'Start'}</button>
+        {isActive ? 'Reset' : 'Start'}</button>
       <div id="Classic-board" className="board">
         <Board width={width} tiles={tiles} boardWidth={boardWidth} completedBoard={completedBoard} 
         setCompletedBoard={setCompletedBoard} setTiles={setTiles}/>
