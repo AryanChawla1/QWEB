@@ -102,7 +102,7 @@ const Classic = () => {
         <Board width={width} tiles={tiles} boardWidth={boardWidth} completedBoard={completedBoard} 
         setCompletedBoard={setCompletedBoard} setTiles={setTiles}/>
       </div>
-      <Timer isActive={isActive} reset={reset}/>
+      <Timer className="timer" isActive={isActive} reset={reset}/>
       <div id="Classic-boardSizeBtns">
         <button className="button2" onClick={() => helpers.decWidth(width, setWidth, setTiles, setCompletedBoard)}>-</button>
         &nbsp;&nbsp;Board Size&nbsp;&nbsp;

@@ -23,6 +23,7 @@ const Timer = ({isActive, reset}) => {
    return (
       <div className="app">
          <div className="time">
+            <p>Time Elapsed:</p>
             {('0' + (Math.floor(time / 360000))).slice(-2)}:{('0' + (Math.floor(time / 6000) % 60)).slice(-2)}:{('0' + (Math.floor(time / 100) % 60)).slice(-2)}:{('0' + (time%100)).slice(-2)}
          </div>
          <div className="row">

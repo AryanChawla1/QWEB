@@ -2,13 +2,15 @@
    min-height: 100vh;
    display: flex;
    flex-direction: column;
-   font-size: calc(10px + 2vmin);
    color: white;
  }
  
  .time {
    font-size: 3rem;
    padding: 2rem;
+   margin-left: 30px;
+   bottom: 20px;
+   position: absolute;
  }
  
  .button {
@@ -40,4 +42,8 @@
    background-color: #3151ff;
    border: 1px solid #152684;
    color: white;
+ }
+
+ p {
+   margin-bottom: 15px;
  }
