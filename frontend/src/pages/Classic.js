@@ -15,7 +15,7 @@ import helpers from '../helpers';
 
 const {useEffect} = React;
 
-const Modal = ({ onRequestClose }) => {
+const Modal = ({ onRequestClose, timeElapsed }) => {
 	// Use useEffect to add an event listener to the document
 	useEffect(() => {
 		function onKeyDown(event) {
@@ -40,7 +40,7 @@ const Modal = ({ onRequestClose }) => {
 			<div className="modal__container">
         <button type="button" class="btn-close close-btn" aria-label="Close" onClick={onRequestClose}>x</button>
 				<p className="modalText">Time Elapsed</p>
-        <p className="modalText">00:00:00:00</p>
+        <p className="modalText">{timeElapsed}</p>
 				<p className="modalText">Would you like to <br /> submit your score?</p>
 				<p></p>
 				<button type="button" className="modalButton">
@@ -59,6 +59,8 @@ const Classic = () => {
 
   const [isActive, setActive] = useState(false)
   const [reset, setReset] = useState(false);
+  const [timeElapsed, setTimeElapsed] = useState(0);
+  const [gameOver, setGameOver] = useState(false);
 
   const onStartBtnClick = () => {
     helpers.shuffleTiles(width, setCompletedBoard, setTiles)
@@ -79,10 +81,16 @@ const Classic = () => {
 		setModalIsOpen(!isModalOpen);
 	};
 
+  if (gameOver) {
+    setModalIsOpen(true);
+    setGameOver(false);
+    setActive(false);
+  }
+
   return (
     
     <div>
-      {isModalOpen && <Modal onRequestClose={toggleModal} />}
+      {isModalOpen && <Modal onRequestClose={toggleModal} timeElapsed={timeElapsed} />}
       <div className="navbar">
       <Link to='/classic/leaderboard'><button>Leaderboard</button></Link>
         <Link to='/create-account'>
@@ -100,9 +108,9 @@ const Classic = () => {
         {isActive ? 'Reset' : 'Start'}</button>
       <div id="Classic-board" className="board">
         <Board width={width} tiles={tiles} boardWidth={boardWidth} completedBoard={completedBoard} 
-        setCompletedBoard={setCompletedBoard} setTiles={setTiles}/>
+        setCompletedBoard={setCompletedBoard} setTiles={setTiles} setGameOver={setGameOver}/>
       </div>
-      <Timer isActive={isActive} reset={reset}/>
+      <Timer isActive={isActive} reset={reset} timeElapsed={timeElapsed} setTimeElapsed={setTimeElapsed}/>
       <div id="Classic-boardSizeBtns">
         <button className="button2" onClick={() => helpers.decWidth(width, setWidth, setTiles, setCompletedBoard)}>-</button>
         &nbsp;&nbsp;Board Size&nbsp;&nbsp;

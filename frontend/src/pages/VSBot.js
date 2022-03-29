@@ -10,6 +10,11 @@ const VSBot = () => {
   const [tilesB, setTilesB] = useState(() => helpers.initTiles(width)) //Bot's tiles
   const [tilesP, setTilesP] = useState(() => helpers.initTiles(width)) //Player's tiles
   const [completedBoard, setCompletedBoard] = useState([])
+  const [gameOver, setGameOver] = useState(false);
+
+  if (gameOver) {
+    console.log(gameOver)
+  }
 
   return (
     <div>
@@ -28,7 +33,7 @@ const VSBot = () => {
       </div>
       <div id="VSBot-playerBoard" className="board">
         <Board width={width} tiles={tilesP} boardWidth={boardWidth} completedBoard={completedBoard} 
-        setCompletedBoard={setCompletedBoard} setTiles={setTilesP}/>
+        setCompletedBoard={setCompletedBoard} setTiles={setTilesP} setGameOver={setGameOver}/>
       </div>
       <div id="VSBot-boardSizeBtns">
         <button className="button2" onClick={() => helpers.decWidth(width, setWidth, [setTilesB, setTilesP], setCompletedBoard)}>-</button>

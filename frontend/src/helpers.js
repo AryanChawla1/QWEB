@@ -72,10 +72,11 @@ const shuffleTiles = (w, setCompletedBoard, setTiles) => {
   }
 }
 
-const checkIfComplete = (tiles, completedBoard, setCompletedBoard) => {
+const checkIfComplete = (tiles, completedBoard, setCompletedBoard, setGameOver) => {
   if (JSON.stringify(tiles) === JSON.stringify(completedBoard)) {
-    setTimeout(function () { alert("Well Done!") }, 260); //Activates too early if there isnt a delay
+    setTimeout(function () { setGameOver(true) }, 260);
     setCompletedBoard([])
+    return true;
   }
 }
 

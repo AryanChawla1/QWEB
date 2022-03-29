@@ -10,6 +10,11 @@ const App = () => {
   const [width, setWidth] = useState(3) //width in tiles
   const [tiles, setTiles] = useState(() => helpers.initTiles(width))
   const [completedBoard, setCompletedBoard] = useState([])
+  const [gameOver, setGameOver] = useState(false);
+
+  if (gameOver) {
+    console.log(gameOver)
+  }
 
   return (
     <div>
@@ -26,7 +31,7 @@ const App = () => {
       <button id="Daily-startBtn" className="button1" onClick={() => helpers.shuffleTiles(width, setCompletedBoard, setTiles)}>Start</button>
       <div id="Daily-board" className="board">
         <Board width={width} tiles={tiles} boardWidth={boardWidth} completedBoard={completedBoard} 
-        setCompletedBoard={setCompletedBoard} setTiles={setTiles}/>
+        setCompletedBoard={setCompletedBoard} setTiles={setTiles} setGameOver={setGameOver}/>
       </div>
       <div id="Daily-boardSizeBtns">
         <button className="button2" onClick={() => helpers.decWidth(width, setWidth, setTiles, setCompletedBoard)}>-</button>

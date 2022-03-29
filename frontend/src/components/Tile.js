@@ -2,7 +2,7 @@ import React from 'react'
 import { Motion, spring } from "react-motion"
 import helpers from '../helpers'
 
-const Tile = ({ width, tile, boardWidth, tileHeld, tileReleased, tileMovedOnto }) => {
+const Tile = ({ width, tile, boardWidth, tileHeld, tileReleased, tileMovedOnto, setGameOver }) => {
   const tileWidth = boardWidth / width
   const visualPos = helpers.getVisualPosition(tile, tileWidth)
   const fontSize = ((tile.id < 100) ? tileWidth * 0.6 : tileWidth * 0.55) //Allows 3 digit numbers to fit in box (e.g. 100)
@@ -15,7 +15,7 @@ const Tile = ({ width, tile, boardWidth, tileHeld, tileReleased, tileMovedOnto }
     <Motion style={motionStyle}>
       {({ translateX, translateY }) => (
         <button className="tile" onMouseDown={() => tileHeld(tile)} onMouseUp={() => tileReleased(tile)}
-        onMouseLeave={() => tileReleased(tile)} onMouseEnter={() => tileMovedOnto(tile)}
+        onMouseLeave={() => tileReleased(tile)} onMouseEnter={() => tileMovedOnto(tile, setGameOver)}
         style={{
           width: tileWidth,
           height: tileWidth,

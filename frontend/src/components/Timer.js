@@ -1,29 +1,28 @@
-import React, { useState, useEffect} from 'react';
+import React, {useEffect} from 'react';
 
 import '../styles/Timer.css';
 
-const Timer = ({isActive, reset}) => {
-   const [time, setTime] = useState(0);
+const Timer = ({isActive, reset, timeElapsed, setTimeElapsed}) => {
 
    useEffect(() => {
       if (reset) {
-         setTime(0)
+         setTimeElapsed(0)
       }
       let interval = null;
       if (isActive) {
         interval = setInterval(() => {
-          setTime(time => time + 1);
+          setTimeElapsed(timeElapsed => timeElapsed + 1);
         }, 10);
-      } else if (!isActive && time !== 0) {
+      } else if (!isActive && timeElapsed !== 0) {
         clearInterval(interval);
       }
       return () => clearInterval(interval);
-    }, [isActive, time]);
+    }, [isActive, timeElapsed]);
 
    return (
       <div className="app">
          <div className="time">
-            {('0' + (Math.floor(time / 360000))).slice(-2)}:{('0' + (Math.floor(time / 6000) % 60)).slice(-2)}:{('0' + (Math.floor(time / 100) % 60)).slice(-2)}:{('0' + (time%100)).slice(-2)}
+            {('0' + (Math.floor(timeElapsed / 360000))).slice(-2)}:{('0' + (Math.floor(timeElapsed / 6000) % 60)).slice(-2)}:{('0' + (Math.floor(timeElapsed / 100) % 60)).slice(-2)}:{('0' + (timeElapsed%100)).slice(-2)}
          </div>
          <div className="row">
          </div>
