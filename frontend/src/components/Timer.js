@@ -2,11 +2,13 @@ import React, { useState, useEffect} from 'react';
 
 import '../styles/Timer.css';
 
-const Timer = ({isActive}) => {
+const Timer = ({isActive, reset}) => {
    const [time, setTime] = useState(0);
-   console.log(isActive)
 
    useEffect(() => {
+      if (reset) {
+         setTime(0)
+      }
       let interval = null;
       if (isActive) {
         interval = setInterval(() => {

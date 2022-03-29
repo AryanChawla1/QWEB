@@ -58,18 +58,23 @@ const Classic = () => {
   const [completedBoard, setCompletedBoard] = useState([])
 
   const [isActive, setActive] = useState(false)
-
-  const toggleActive = () => {
-    setActive(!isActive)
-  }
+  const [reset, setReset] = useState(false);
 
   const onStartBtnClick = () => {
     helpers.shuffleTiles(width, setCompletedBoard, setTiles)
     toggleActive()
   }
+
+  const toggleActive = () => {
+    setReset(false)
+    if (isActive) {
+      setReset(true)
+    }
+    setActive(!isActive)
+  }
+
   const [isModalOpen, setModalIsOpen] = useState(false);
 	
-	console.log(useState("hello")[1])
 	const toggleModal = () => {
 		setModalIsOpen(!isModalOpen);
 	};
@@ -97,7 +102,7 @@ const Classic = () => {
         <Board width={width} tiles={tiles} boardWidth={boardWidth} completedBoard={completedBoard} 
         setCompletedBoard={setCompletedBoard} setTiles={setTiles}/>
       </div>
-      <Timer isActive={isActive}/>
+      <Timer isActive={isActive} reset={reset}/>
       <div id="Classic-boardSizeBtns">
         <button className="button2" onClick={() => helpers.decWidth(width, setWidth, setTiles, setCompletedBoard)}>-</button>
         &nbsp;&nbsp;Board Size&nbsp;&nbsp;
