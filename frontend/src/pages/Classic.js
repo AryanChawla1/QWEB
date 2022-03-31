@@ -87,10 +87,20 @@ const Classic = () => {
     setActive(false);
   }
 
+  function setTimeDesign(timeElapsed) {
+    var time = ('0' + (Math.floor(timeElapsed / 360000)).toString()).slice(-2) + ":" + 
+    ('0' + (Math.floor(timeElapsed / 6000) % 60).toString()).slice(-2) + ":" + 
+    ('0' + (Math.floor(timeElapsed / 100) % 60).toString()).slice(-2) + ":" + 
+    (('0' + (timeElapsed%100)).toString()).slice(-2)
+    return time
+  }
+
   return (
     
     <div>
-      {isModalOpen && <Modal onRequestClose={toggleModal} timeElapsed={timeElapsed} />}
+      {isModalOpen && <Modal onRequestClose={toggleModal} timeElapsed={
+        setTimeDesign(timeElapsed)
+        } />}
       <div className="navbar">
       <Link to='/classic/leaderboard'><button>Leaderboard</button></Link>
         <Link to='/create-account'>
