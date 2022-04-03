@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'corsheaders', # new
     # Local Apps
     'users', # new
+    'vs_bot',
 
 ]
 
