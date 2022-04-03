@@ -24,9 +24,9 @@ const Modal = ({ onRequestClose, timeElapsed }) => {
 				onRequestClose();
 			}
 		}
-		// Prevent scolling
-		document.body.style.overflow = "hidden";
-		document.addEventListener("keydown", onKeyDown);
+		// // Prevent scolling
+		// document.body.style.overflow = "hidden";
+		// document.addEventListener("keydown", onKeyDown);
 
 		// Clear things up when unmounting this component
 		return () => {
