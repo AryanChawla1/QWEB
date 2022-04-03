@@ -10,4 +10,4 @@ class UserSerializer(ModelSerializer):
 class ScoresSerializer(ModelSerializer):
     class Meta:
         model = Scores
-        fields = ("account_id", "time", "moves", "date")
+        fields = ("account", "time", "moves", "date")
