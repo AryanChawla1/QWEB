@@ -61,6 +61,7 @@ const Classic = () => {
   const [reset, setReset] = useState(false);
   const [timeElapsed, setTimeElapsed] = useState(0);
   const [gameOver, setGameOver] = useState(false);
+  const [isModalOpen, setModalIsOpen] = useState(false);
 
   const onStartBtnClick = () => {
     helpers.shuffleTiles(width, setCompletedBoard, setTiles)
@@ -74,8 +75,6 @@ const Classic = () => {
     }
     setActive(!isActive)
   }
-
-  const [isModalOpen, setModalIsOpen] = useState(false);
 	
 	const toggleModal = () => {
 		setModalIsOpen(!isModalOpen);
@@ -102,25 +101,30 @@ const Classic = () => {
         setTimeDesign(timeElapsed)
         } />}
       <div className="navbar">
-      <Link to='/classic/leaderboard'><button>Leaderboard</button></Link>
         <Link to='/create-account'>
           <button className="accountStuff">Create Account</button>
         </Link>
         <Link to='/sign-in'>
           <button className="accountStuff">Sign In</button>
         </Link>
+        <Link to='/'>
+          <button className="accountStuff" onClick={() => helpers.logOut()}>Log Out</button>
+        </Link>
       </div>
-      <button onClick={toggleModal} type="button">
-				Show the modal
-			</button>
-      <Link to='/VSBot'><button>VS Bot</button></Link>
       <button id="Classic-startBtn" className="button1" onClick={() => onStartBtnClick()}>
         {isActive ? 'Reset' : 'Start'}</button>
       <div id="Classic-board" className="board">
         <Board width={width} tiles={tiles} boardWidth={boardWidth} completedBoard={completedBoard} 
         setCompletedBoard={setCompletedBoard} setTiles={setTiles} setGameOver={setGameOver}/>
       </div>
+      <div className="timeElapsedText">Time Elapsed</div>
       <Timer isActive={isActive} reset={reset} timeElapsed={timeElapsed} setTimeElapsed={setTimeElapsed}/>
+      <Link to='/VSBot'>
+          <button id="Classic-VSBotBtn">VS Bot</button>
+      </Link>
+      <Link to='/classic/leaderboard'>
+          <button id="Classic-LeaderboardBtn">Leaderboard</button>
+      </Link>
       <div id="Classic-boardSizeBtns">
         <button className="button2" onClick={() => helpers.decWidth(width, setWidth, setTiles, setCompletedBoard)}>-</button>
         &nbsp;&nbsp;Board Size&nbsp;&nbsp;

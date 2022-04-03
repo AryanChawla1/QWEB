@@ -145,8 +145,12 @@ const decWidth = (w, setWidth, setTiles, setCompletedBoard) => {
   }
 }
 
+const logOut = () => {
+  localStorage.removeItem("token");
+ }
+
 export default {
   getTileFromId, packageTiles, getVisualPosition,
   randInt,initTiles, shuffleTiles, checkIfComplete,
-  moveRow, moveCol, incWidth, decWidth
+  moveRow, moveCol, incWidth, decWidth, logOut
 }

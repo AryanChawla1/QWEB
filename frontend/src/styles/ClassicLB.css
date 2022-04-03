@@ -8,3 +8,22 @@
     left:8%;
     top:25%;
 }
+
+.ClassicLB-size-sort-btns {
+    position: absolute;
+    left: 10%;
+    top: 35%;
+    width: 300px;
+    height: 600px;
+}
+
+#ClassicLB-sort-by-text {
+    top: 82%;
+    left: 50%;
+}
+
+#ClassicLB-back-btn {
+    position: absolute;
+    top: 75%;
+    left: 80%;
+}

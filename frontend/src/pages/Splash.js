@@ -18,6 +18,9 @@ const Splash = () => {
             <Link to='/sign-in'>
             <button className="accountStuff">Sign In</button>
             </Link>
+            <Link to='/'>
+          <button className="accountStuff" onClick={() => helpers.logOut()}>Log Out</button>
+        </Link>
          </div>
          <div className="titleText">TORUS PUZZLE</div>
          <Link to="/daily">

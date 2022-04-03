@@ -25,6 +25,9 @@ const App = () => {
         <Link to='/sign-in'>
         <button className="accountStuff">Sign In</button>
         </Link>
+        <Link to='/'>
+          <button className="accountStuff" onClick={() => helpers.logOut()}>Log Out</button>
+        </Link>
       </div>
       <Link to='/VSBot'><button>VS Bot</button></Link>
       <Link to='/daily/leaderboard'><button>Leaderboard</button></Link>

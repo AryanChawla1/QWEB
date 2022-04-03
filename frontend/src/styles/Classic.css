@@ -48,15 +48,6 @@
   left: 46%;
 }
 
-#Classic-boardSizeBtns {
-  position: absolute;
-  top: 93%;
-  left: 75%;
-  text-align: center;
-  color: white;
-  align-items:center;
-  margin:0 auto;
-}
 
 .modalButton {
 	background: linear-gradient(252.44deg, #EF5DA8 0%, rgba(239, 93, 168, 0) 100%), #5D5FEF;
@@ -124,4 +115,30 @@
 .close-btn:hover {
   color: #5D5FEF;
   transform: scale(1.1);
+}
+
+#Classic-boardSizeBtns {
+  position: absolute;
+  top: 90%;
+  left: 75%;
+  text-align: center;
+  font-size: 24px;
+  color: white;
+  align-items:center;
+  margin:0 auto;
+}
+
+
+#Classic-LeaderboardBtn {
+  position: absolute;
+  top: 83%;
+  left: 77%;
+  margin:0 auto;
+}
+
+#Classic-VSBotBtn {
+  position: absolute;
+  top: 76%;
+  left: 81%;
+  margin:0 auto;
 }

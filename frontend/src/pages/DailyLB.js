@@ -2,6 +2,7 @@ import React from 'react'
 import Leaderboard from '../components/Leaderboard'
 import '../styles/DailyLB.css';
 import { Link } from 'react-router-dom';
+import helpers from '../helpers';
 
 const DailyLB = () => {
   const users = []
@@ -24,6 +25,9 @@ const DailyLB = () => {
         </Link>
         <Link to='/sign-in'>
           <button className="accountStuff">Sign In</button>
+        </Link>
+        <Link to='/'>
+          <button className="accountStuff" onClick={() => helpers.logOut()}>Log Out</button>
         </Link>
       </div>
       <div className="DailyLB-LeaderBoard">
