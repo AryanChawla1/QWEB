@@ -102,7 +102,7 @@ code {
   height: 20px;
   border-radius: 10px;
   position: relative;
-  font-size: 20px;
+  font-size: 24px;
   border: none;
   text-align: center;
   background-color: white;
@@ -116,6 +116,17 @@ code {
 .button2:active {
   background: linear-gradient(252.44deg, #EF5DA8 0%, rgba(239, 93, 168, 0) 100%), #5D5FEF;
   -webkit-text-fill-color: white;
+}
+
+.button3 {
+  width: 120px;
+  height: 80px;
+  font-size: 40px;
+  margin:5px;
+  border-radius: 10px;
+}
+.button3:hover {
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 .leaderBoard {
@@ -177,4 +188,27 @@ code {
   font-size: 40px;
   color: white;
   width: 50%;
+}
+
+.errorText {
+  font-size: 14px;
+  color: red; 
+  margin: 10px;
+}
+
+.timeElapsedText {
+  color: white;
+  font-size: 24px;
+  position: absolute;
+  top: 84.5%;
+  left: 4.2%;
+  margin:0 auto;
+}
+
+h2 {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  margin:0 auto;
+  font-weight: normal;
 }
