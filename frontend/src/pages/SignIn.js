@@ -37,6 +37,7 @@ const SignIn = () => {
         if (data.key) {
           localStorage.clear();
           localStorage.setItem('token', data.key);
+          localStorage.setItem('username', username)
           window.location.replace('http://localhost:3000/');
         } else {
           setUsername('');
