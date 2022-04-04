@@ -1,3 +1,6 @@
+import React from "react"
+import { Link } from "react-router-dom"
+
 const getTileFromId = (id, tiles) => {
     for (let i=0; i<tiles.length; i++) {
       if (tiles[i].id === id) {
@@ -147,10 +150,39 @@ const decWidth = (w, setWidth, setTiles, setCompletedBoard) => {
 
 const logOut = () => {
   localStorage.removeItem("token");
+  setTimeout(function() {
+    window.location.replace('http://localhost:3000/');
+  }, 1);
  }
+
+const getNavbarElements = () => {
+  let navbarElements = null;
+  if (localStorage.getItem('token') === null) {
+     navbarElements = (
+        <div>
+           <Link to='/create-account'>
+              <button className="accountStuff">Create Account</button>
+           </Link>
+           <Link to='/sign-in'>
+           <button className="accountStuff">Sign In</button>
+           </Link>
+        </div>
+     )
+  }
+  else {
+     navbarElements = (
+        <div>
+           <button className="accountStuff">Logged in as: {localStorage.getItem('username')}</button>
+           <button className="accountStuff" onClick={() => logOut()}>Log Out</button>
+        </div>
+     )
+  }
+  return navbarElements
+}
 
 export default {
   getTileFromId, packageTiles, getVisualPosition,
   randInt,initTiles, shuffleTiles, checkIfComplete,
-  moveRow, moveCol, incWidth, decWidth, logOut
+  moveRow, moveCol, incWidth, decWidth, logOut, 
+  getNavbarElements,
 }

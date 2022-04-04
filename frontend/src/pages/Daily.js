@@ -19,15 +19,7 @@ const App = () => {
   return (
     <div>
       <div className="navbar">
-        <Link to='/create-account'>
-          <button className="accountStuff">Create Account</button>
-        </Link>
-        <Link to='/sign-in'>
-        <button className="accountStuff">Sign In</button>
-        </Link>
-        <Link to='/'>
-          <button className="accountStuff" onClick={() => helpers.logOut()}>Log Out</button>
-        </Link>
+        {helpers.getNavbarElements()}
       </div>
       <Link to='/VSBot'><button>VS Bot</button></Link>
       <Link to='/daily/leaderboard'><button>Leaderboard</button></Link>

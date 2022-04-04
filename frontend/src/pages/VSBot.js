@@ -53,15 +53,7 @@ const VSBot = () => {
   return (
     <div>
       <div className="navbar">
-        <Link to='/create-account'>
-          <button className="accountStuff">Create Account</button>
-        </Link>
-        <Link to='/sign-in'>
-        <button className="accountStuff">Sign In</button>
-        </Link>
-        <Link to='/'>
-          <button className="accountStuff" onClick={() => helpers.logOut()}>Log Out</button>
-        </Link>
+        {helpers.getNavbarElements()}
       </div>
       <div className="timeElapsedText">Time Elapsed</div>
       <Timer className="timer" isActive={isActive} reset={reset} timeElapsed={timeElapsed} setTimeElapsed={setTimeElapsed}/>

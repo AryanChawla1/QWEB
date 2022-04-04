@@ -101,15 +101,7 @@ const Classic = () => {
         setTimeDesign(timeElapsed)
         } />}
       <div className="navbar">
-        <Link to='/create-account'>
-          <button className="accountStuff">Create Account</button>
-        </Link>
-        <Link to='/sign-in'>
-          <button className="accountStuff">Sign In</button>
-        </Link>
-        <Link to='/'>
-          <button className="accountStuff" onClick={() => helpers.logOut()}>Log Out</button>
-        </Link>
+        {helpers.getNavbarElements()}
       </div>
       <button id="Classic-startBtn" className="button1" onClick={() => onStartBtnClick()}>
         {isActive ? 'Reset' : 'Start'}</button>
