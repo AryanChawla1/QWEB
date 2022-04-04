@@ -24,7 +24,6 @@ router = routers.DefaultRouter()
 router.register(r'scores', views.ScoresView, 'scores')
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('api/users/', include('users.urls')),
-    path('api/', include(router.urls)),
+path('admin/', admin.site.urls),
+path('api/v1/users/', include('users.urls')),
 ]
