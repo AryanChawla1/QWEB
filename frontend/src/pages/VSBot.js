@@ -32,8 +32,24 @@ const VSBot = () => {
   const onStartBtnClick = () => {
     helpers.shuffleTiles(width, setCompletedBoard, [setTilesB, setTilesP])
     toggleActive()
+    send_backend()
   }
 
+  function send_backend() {
+    fetch('http://127.0.0.1:8000/vs_bot/', {
+      method: 'POST',
+      headers: {
+        'Content-Type':'application/json'
+      },
+      body: JSON.stringify({"board" : helpers.packageTiles(tilesB, width)})
+    })
+      .then (response => response.json())
+      .then(data => {
+        if (data.commands) {
+          console.log(data.commands)
+        }
+      })
+  }
   return (
     <div>
       <div className="navbar">

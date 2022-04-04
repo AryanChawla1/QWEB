@@ -6,7 +6,7 @@ from django.utils import timezone
 class CustomUser(AbstractUser):
     streak = models.IntegerField(default=0)
     def __str__(self):
-        return self.email
+        return self.username
     
 
 class Scores(models.Model):

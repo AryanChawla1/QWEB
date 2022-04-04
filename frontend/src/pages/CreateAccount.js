@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import '../styles/CreateAccount.css'
 
 const CreateAccount = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [username, setUsername] = useState('');
+  const [password1, setPassword1] = useState('');
   const [password2, setPassword2] = useState('');
   const [errors, setErrors] = useState(false);
   const [loading, setLoading] = useState(true);
@@ -21,12 +21,12 @@ const CreateAccount = () => {
     e.preventDefault();
 
     const user = {
-      email: email,
-      password: password,
+      username: username,
+      password1: password1,
       password2: password2
     };
 
-    fetch('http://127.0.0.1:8000/api/v1/users/auth/login/', {
+    fetch('http://127.0.0.1:8000/api/users/auth/register/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -40,8 +40,8 @@ const CreateAccount = () => {
           localStorage.setItem('token', data.key);
           window.location.replace('http://localhost:3000/');
         } else {
-          setEmail('');
-          setPassword('');
+          setUsername('');
+          setPassword1('');
           setPassword2('');
           localStorage.clear();
           setErrors(true);
@@ -61,22 +61,22 @@ const CreateAccount = () => {
         <form onSubmit={onSubmit}>
            {loading === false && <h1>Create Account</h1>}
            {errors === true && <div className='errorText'>*Error creating account</div>}
-          <label htmlFor='email'>Email address:</label> <br />
+          <label htmlFor='username'>Username:</label> <br />
           <input
-            name='email'
-            type='email'
-            value={email}
+            name='username'
+            type='username'
+            value={username}
             required
-            onChange={e => setEmail(e.target.value)}
+            onChange={e => setUsername(e.target.value)}
           />{' '}
           <br />
-          <label htmlFor='password'>Password:</label> <br />
+          <label htmlFor='password1'>Password:</label> <br />
           <input
-            name='password'
+            name='password1'
             type='password'
-            value={password}
+            value={password1}
             required
-            onChange={e => setPassword(e.target.value)}
+            onChange={e => setPassword1(e.target.value)}
           />{' '}
           <div></div>
           <label htmlFor='password2'>Confirm password:</label> <br />

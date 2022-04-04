@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import '../styles/SignIn.css'
 
 const SignIn = () => {
-  const [email, setEmail] = useState('');
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState(false);
   const [loading, setLoading] = useState(true);
@@ -21,11 +21,11 @@ const SignIn = () => {
     e.preventDefault();
 
     const user = {
-      email: email,
+      username: username,
       password: password
     };
 
-    fetch('http://127.0.0.1:8000/api/v1/users/auth/login/', {
+    fetch('http://127.0.0.1:8000/api/users/auth/login/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -39,7 +39,7 @@ const SignIn = () => {
           localStorage.setItem('token', data.key);
           window.location.replace('http://localhost:3000/');
         } else {
-          setEmail('');
+          setUsername('');
           setPassword('');
           localStorage.clear();
           setErrors(true);
@@ -55,14 +55,14 @@ const SignIn = () => {
       {loading === false && (
         <form onSubmit={onSubmit}>
            {loading === false && <h1>Sign in</h1>}
-           {errors === true && <div className='errorText'>*Invalid email or password</div>}
-          <label htmlFor='email'>Email address:</label> <br />
+           {errors === true && <div className='errorText'>*Invalid username or password</div>}
+          <label htmlFor='username'>Username:</label> <br />
           <input
-            name='email'
-            type='email'
-            value={email}
+            name='username'
+            type='username'
+            value={username}
             required
-            onChange={e => setEmail(e.target.value)}
+            onChange={e => setUsername(e.target.value)}
           />{' '}
           <br />
           <label htmlFor='password'>Password:</label> <br />
