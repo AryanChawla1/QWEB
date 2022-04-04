@@ -15,8 +15,4 @@ class Scores(models.Model):
     account = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
     time = models.IntegerField() #change this to time not time
     moves = models.IntegerField()
-<<<<<<< HEAD
     date = models.DateTimeField(default=timezone.now)
-=======
-    date = models.DateField()
->>>>>>> 72878b7de449342d5b4037be9ea07e645104eb0c

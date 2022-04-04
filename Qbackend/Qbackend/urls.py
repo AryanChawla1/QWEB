@@ -27,4 +27,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/users/', include('users.urls')),
     path('api/', include(router.urls)),
+    path('vs_bot/', include('vs_bot.urls')),
 ]
