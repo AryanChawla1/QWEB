@@ -5,7 +5,7 @@ from .models import CustomUser, Scores
 class UserSerializer(ModelSerializer):
     class Meta:
         model = CustomUser
-        fields = ('username', 'last_login', 'date_joined', 'is_staff', "streak")
+        fields = ('email', 'last_login', 'date_joined', 'is_staff', "streak")
 
 class ScoresSerializer(ModelSerializer):
     class Meta:
