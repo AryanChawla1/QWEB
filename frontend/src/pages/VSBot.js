@@ -30,18 +30,18 @@ const VSBot = () => {
   }
 
   const onStartBtnClick = () => {
-    helpers.shuffleTiles(width, setCompletedBoard, [setTilesB, setTilesP])
+    const newBoard = helpers.shuffleTiles(width, setCompletedBoard, [setTilesB, setTilesP])
     toggleActive()
-    send_backend()
+    send_backend(newBoard)
   }
 
-  function send_backend() {
+  function send_backend(board) {
     fetch('http://127.0.0.1:8000/vs_bot/', {
       method: 'POST',
       headers: {
         'Content-Type':'application/json'
       },
-      body: JSON.stringify({"board" : helpers.packageTiles(tilesB, width)})
+      body: JSON.stringify({"board" : helpers.packageTiles(board, width)})
     })
       .then (response => response.json())
       .then(data => {

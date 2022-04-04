@@ -70,6 +70,7 @@ const shuffleTiles = (w, setCompletedBoard, setTiles) => {
   else {
     setTiles(newTiles)
   }
+  return newTiles
 }
 
 const checkIfComplete = (tiles, completedBoard, setCompletedBoard, setGameOver) => {
