@@ -117,7 +117,6 @@ const incWidth = (w, setWidth, setTiles, setCompletedBoard) => {
     w += 1
     setWidth(w)
     if (Array.isArray(setTiles)) {
-      console.log("iusarray")
       for (let i = 0; i < setTiles.length; i++) {
         setTiles[i](initTiles(w))
       }
