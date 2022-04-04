@@ -32,6 +32,7 @@ const VSBot = () => {
   const onStartBtnClick = () => {
     const newBoard = helpers.shuffleTiles(width, setCompletedBoard, [setTilesB, setTilesP])
     toggleActive()
+    console.log(newBoard)
     send_backend(newBoard)
   }
 
