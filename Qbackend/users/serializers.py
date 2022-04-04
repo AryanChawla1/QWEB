@@ -10,8 +10,4 @@ class UserSerializer(ModelSerializer):
 class ScoresSerializer(ModelSerializer):
     class Meta:
         model = Scores
-<<<<<<< HEAD
-        fields = ("account", "time", "moves", "date")
-=======
         fields = ("account_id", "time", "moves", "date")
->>>>>>> 72878b7de449342d5b4037be9ea07e645104eb0c
