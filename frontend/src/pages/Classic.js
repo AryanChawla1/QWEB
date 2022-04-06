@@ -82,6 +82,7 @@ const Classic = () => {
 	
 	const toggleModal = () => {
 		setModalIsOpen(!isModalOpen);
+    setTimeElapsed(0);
 	};
 
   if (gameOver) {
