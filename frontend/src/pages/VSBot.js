@@ -53,6 +53,9 @@ const VSBot = () => {
   }
   return (
     <div>
+      <Link to='/classic'>
+         <button id="back-button">Back</button>
+      </Link>
       <div className="navbar">
         {helpers.getNavbarElements()}
       </div>

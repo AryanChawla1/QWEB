@@ -100,8 +100,10 @@ const Classic = () => {
   }
 
   return (
-    
     <div>
+      <Link to='/'>
+         <button id="back-button">Back</button>
+      </Link>
       {isModalOpen && <Modal onRequestClose={toggleModal} timeElapsed={
         setTimeDesign(timeElapsed)
         } />}

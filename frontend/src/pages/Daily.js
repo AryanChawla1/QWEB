@@ -18,6 +18,9 @@ const App = () => {
 
   return (
     <div>
+      <Link to='/'>
+         <button id="back-button">Back</button>
+      </Link>
       <div className="navbar">
         {helpers.getNavbarElements()}
       </div>
