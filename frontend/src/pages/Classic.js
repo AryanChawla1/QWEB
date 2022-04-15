@@ -35,17 +35,21 @@ const Modal = ({ onRequestClose, timeElapsed }) => {
 		};
 	});
 
+  const signInBtn = (
+    <Link to='/sign-in'>
+      <p className="modalText">Would you like to <br /> submit your score?</p>
+			<p></p>
+      <button className="modalButton">Sign In</button>
+    </Link>
+  )
+
 	return (
 		<div className="modal__backdrop">
 			<div className="modal__container">
         <button type="button" class="btn-close close-btn" aria-label="Close" onClick={onRequestClose}>x</button>
 				<p className="modalText">Time Elapsed</p>
         <p className="modalText">{timeElapsed}</p>
-				<p className="modalText">Would you like to <br /> submit your score?</p>
-				<p></p>
-				<button type="button" className="modalButton">
-					Sign In
-				</button>
+				{(localStorage.getItem('token') === null) ? signInBtn : <div></div>};
 			</div>
 		</div>
 	);
@@ -78,6 +82,7 @@ const Classic = () => {
 	
 	const toggleModal = () => {
 		setModalIsOpen(!isModalOpen);
+    setTimeElapsed(0);
 	};
 
   if (gameOver) {
@@ -95,8 +100,10 @@ const Classic = () => {
   }
 
   return (
-    
     <div>
+      <Link to='/'>
+         <button id="back-button">Back</button>
+      </Link>
       {isModalOpen && <Modal onRequestClose={toggleModal} timeElapsed={
         setTimeDesign(timeElapsed)
         } />}
