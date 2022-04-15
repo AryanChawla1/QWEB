@@ -15,7 +15,25 @@ const VSBot = () => {
   const [isActive, setActive] = useState(false)
   const [gameOver, setGameOver] = useState(false);
   const [reset, setReset] = useState(false);
+  var commands;
 
+  if (timeElapsed % 200 === 0 && timeElapsed !== 0) {
+    for (let i = 0; i < commands.length; i++) {
+      console.log(commands[i])
+      if(commands[i].charAt(0) === 'u') {
+        helpers.moveCol(width, tilesB, parseInt(commands[i].substring(1)), 1)
+      }
+      else if (commands[i].charAt(0) === 'd') {
+        helpers.moveCol(width, tilesB, parseInt(commands[i].substring(1)), -1)
+      }
+      else if (commands[i].charAt(0) === 'l') {
+        helpers.moveRow(width, tilesB, parseInt(commands[i].substring(1)), -1)
+      }
+      else if (commands[i].charAt(0) === 'r') {
+        helpers.moveRow(width, tilesB, parseInt(commands[i].substring(1)), 1)
+      }
+    }
+  }
   if (gameOver) {
     setGameOver(false);
     setActive(false);
@@ -47,10 +65,12 @@ const VSBot = () => {
       .then (response => response.json())
       .then(data => {
         if (data.commands) {
-          console.log(data.commands)
+          console.log("Success!")
+          commands = data.commands
+          console.log(commands)
+          }
         }
-      })
-  }
+      )}
   return (
     <div>
       <div className="navbar">
