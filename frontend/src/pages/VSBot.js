@@ -15,30 +15,44 @@ const VSBot = () => {
   const [isActive, setActive] = useState(false)
   const [gameOver, setGameOver] = useState(false);
   const [reset, setReset] = useState(false);
-  var commands;
+  const [commands, setCommands] = useState([]);
+  const [cmdIndex, setCmdIndex] = useState(0)
 
-  if (timeElapsed % 200 === 0 && timeElapsed !== 0) {
-    for (let i = 0; i < commands.length; i++) {
-      console.log(commands[i])
-      if(commands[i].charAt(0) === 'u') {
-        helpers.moveCol(width, tilesB, parseInt(commands[i].substring(1)), 1)
-      }
-      else if (commands[i].charAt(0) === 'd') {
-        helpers.moveCol(width, tilesB, parseInt(commands[i].substring(1)), -1)
-      }
-      else if (commands[i].charAt(0) === 'l') {
-        helpers.moveRow(width, tilesB, parseInt(commands[i].substring(1)), -1)
-      }
-      else if (commands[i].charAt(0) === 'r') {
-        helpers.moveRow(width, tilesB, parseInt(commands[i].substring(1)), 1)
+  const [botMoved, setBotMoved] = useState(false)
+  if (isActive) {
+    if (timeElapsed % 10 === 0 && timeElapsed !== 0) {
+      if (!botMoved) {
+        if (cmdIndex < commands.length) {
+          setBotMoved(true)
+          if(commands[cmdIndex].charAt(0) === 'u') {
+            helpers.moveCol(width, tilesB, parseInt(commands[cmdIndex].substring(1)), -1)
+          }
+          else if (commands[cmdIndex].charAt(0) === 'd') {
+            helpers.moveCol(width, tilesB, parseInt(commands[cmdIndex].substring(1)), 1)
+          }
+          else if (commands[cmdIndex].charAt(0) === 'l') {
+            helpers.moveRow(width, tilesB, parseInt(commands[cmdIndex].substring(1)), -1)
+          }
+          else if (commands[cmdIndex].charAt(0) === 'r') {
+            helpers.moveRow(width, tilesB, parseInt(commands[cmdIndex].substring(1)), 1)
+          }
+          setCmdIndex(cmdIndex => cmdIndex + 1)
+        }
       }
     }
+    else if (botMoved) {
+      setBotMoved(false)
+    }
   }
+  if (cmdIndex === commands.length && commands.length !== 0) {
+    setGameOver(true)
+  }
+
   if (gameOver) {
     setGameOver(false);
     setActive(false);
+    setCmdIndex(0)
   }
-
   const toggleActive = () => {
     setReset(false)
     if (isActive) {
@@ -66,8 +80,8 @@ const VSBot = () => {
       .then(data => {
         if (data.commands) {
           console.log("Success!")
-          commands = data.commands
-          console.log(commands)
+          setCommands(data.commands)
+          console.log(data.commands)
           }
         }
       )}
