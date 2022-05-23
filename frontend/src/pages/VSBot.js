@@ -17,10 +17,11 @@ const VSBot = () => {
   const [reset, setReset] = useState(false);
   const [commands, setCommands] = useState([]);
   const [cmdIndex, setCmdIndex] = useState(0)
+  const secondsBetweenMoves = 1
 
   const [botMoved, setBotMoved] = useState(false)
   if (isActive) {
-    if (timeElapsed % 10 === 0 && timeElapsed !== 0) {
+    if (timeElapsed % (secondsBetweenMoves*100) === 0 && timeElapsed !== 0) {
       if (!botMoved) {
         if (cmdIndex < commands.length) {
           setBotMoved(true)
